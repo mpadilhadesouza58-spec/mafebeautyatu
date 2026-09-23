@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Maquiagems</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="icon" href="img/index/logo.png" type="image/png">
+</head>
+    <nav>
+        <a class="menu-btn" href="index.html">Início</a>
+    <a class="menu-btn" href="#produtos">Produtos</a>
+    <a class="menu-btn" href="#">Promoções</a>
+    <a class="menu-btn" href="contato.html">Contato</a>
+    </nav>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffafc;
+        }
+
+        header {
+            background-color: #ffa1c0;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #fcbad5;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        .banner {
+            background-color: #fce4ec;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .botao {
+            padding: 10px 20px;
+            background-color: #e45d8a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .botao:hover {
+            background-color: #d94b7a;
+        }
+
+        .produtos {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .produto {
+            background-color: white;
+            border: 1px solid #f3c1d3;
+            padding: 20px;
+            width: 250px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        /* IMAGENS DOS PRODUTOS */
+        .produto img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .produto h3 {
+            color: #d94b7a;
+        }
+
+        footer {
+            background-color: #eea4c1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mafe-Beauty</h1>
+    <p>Seu catálogo online de maquiagem</p>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Promoções</a>
+    <a href="#">Contato</a>
+</nav>
+
+<main>
+
+    <section class="banner">
+        <h2>Destaques da Semana</h2>
+        <p>As melhores maquiagens com preços incríveis!</p>
+        <button class="botao">Ver Produtos</button>
+    </section>
+
+    <section>
+        <h2>Nossos Produtos</h2>
+        <div class="produtos">
+
+            <div class="produto">
+                <img src="img/index/batom.png" alt="Batom Matte">
+                <h3>Batom Matte</h3>
+                <p>Alta fixação e cores incríveis.</p>
+                <button class="botao">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="img/index/base.png" alt="Base Líquida">
+                <h3>Base Líquida</h3>
+                <p>Cobertura perfeita para todos os tipos de pele.</p>
+                <button class="botao">Comprar</button>
+            </div>
+
+            <div class="produto">
+                <img src="img/index/paleta.png" alt="Paleta de Sombras">
+                <h3>Paleta de Sombras</h3>
+                <p>Cores vibrantes para qualquer ocasião.</p>
+                <button class="botao">Comprar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Sobre a Loja</h2>
+        <p>Somos apaixonados por maquiagem e beleza e por isso oferecemos produtos de qualidade para realçar sua beleza e autoestima.</p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 - Mafe Beauty | Contato: contato@mafebeauty.com</p>
+</footer>
+
+</body>
+</html>

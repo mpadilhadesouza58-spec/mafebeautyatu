@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>Login - mafe beauty</title>
 
-</body>
+    <link rel="stylesheet" href="{% static 'usuario/login.css' %}">
+</head>
+ <body>
+<div class="login-container">
+    <div class="login-card">
+        <div class="logo">
+            Mafe <span>Beauty</span>
+        </div>
+        <h1>Bem-vinda</h1>
+
+        <p class="subtitulo">
+            Entre na sua conta para continuar
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+            </div>
+
+            <div class="opcoes">
+                <label>
+                    <input type="checkbox" name="lembrar">
+                    Lembrar de mim
+                </label>
+
+                <a href="#">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit">
+                ENTRAR
+            </button>
+        </form>
+
+        <div class="cadastro">
+            Ainda não possui uma conta?
+            <a href="#">Criar conta</a>
+        </div>
+
+</div>
+</div>
+
+
+ </body>
 </html>

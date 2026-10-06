@@ -16,3 +16,7 @@ def contato(request):
 
 def categorias(request):
     return render(request, 'categorias.html')
+
+
+def promocoes(request):
+    return render(request, 'promocoes.html')

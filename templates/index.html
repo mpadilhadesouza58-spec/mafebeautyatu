@@ -19,10 +19,10 @@
 </header>
 
 <nav>
-    <a class="menu-btn" href="/">Início</a>
-    <a class="menu-btn" href="/produtos/">Produtos</a>
-    <a class="menu-btn" href="#">Promoções</a>
-    <a class="menu-btn" href="#">Contato</a>
+    <a class="menu-btn" href="{% url 'home' %}">Início</a>
+    <a class="menu-btn" href="{% url 'produto_lista' %}">Produtos</a>
+    <a class="menu-btn" href="{% url 'promocoes' %}">Promoções</a>
+    <a class="menu-btn" href="{% url 'contato' %}">Contato</a>
 </nav>
 
 <main>
@@ -31,7 +31,7 @@
         <h2>Destaques da Semana</h2>
         <p>As melhores maquiagens com preços incríveis!</p>
 
-        <button class="botao">Ver Produtos</button>
+        <a href="{% url 'produto_lista' %}" class="botao">Ver Produtos</a>
     </section>
 
     <section id="produtos">

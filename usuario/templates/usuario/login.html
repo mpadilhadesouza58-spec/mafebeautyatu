@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -59,7 +61,7 @@
 
         <div class="cadastro">
             Ainda não possui uma conta?
-            <a href="#">Criar conta</a>
+            <a href="{% url 'usuario:cadastro' %}">Criar conta</a>
         </div>
 
 </div>

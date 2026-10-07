@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Criar conta - Mafe Beauty</title>
+
+    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+</head>
+
+<body>
+
+    <div class="cadastro-container">
+
+        <div class="logo">
+            Mafe Beauty
+        </div>
+
+        <h1>Criar conta</h1>
+
+        <p class="subtitulo">
+            Crie sua conta para acessar a Mafe Beauty
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="campo">
+                <label for="id_username">
+                    Nome de usuário
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    id="id_username"
+                    placeholder="Digite seu nome de usuário"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="id_email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    id="id_email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="id_password1">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    name="password1"
+                    id="id_password1"
+                    placeholder="Digite sua senha"
+                    required
+                >
+            </div>
+
+            <div class="campo">
+                <label for="id_password2">
+                    Confirmar senha
+                </label>
+
+                <input
+                    type="password"
+                    name="password2"
+                    id="id_password2"
+                    placeholder="Confirme sua senha"
+                    required
+                >
+            </div>
+
+            <button type="submit">
+                Criar conta
+            </button>
+
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="sucesso">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <p class="login">
+            Já possui uma conta?
+            <a href="{% url 'usuarios:login' %}">
+                Entrar
+            </a>
+        </p>
+
+    </div>
+
+</body>
+</html>

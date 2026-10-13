@@ -8,7 +8,8 @@
 
     <title>Criar conta - Mafe Beauty</title>
 
-    <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+    <link rel="stylesheet" href="{% static 'usuario/cadastro.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'usuario/image.png'%}">
 </head>
 
 <body>
@@ -98,7 +99,7 @@
 
         <p class="login">
             Já possui uma conta?
-            <a href="{% url 'usuarios:login' %}">
+            <a href="{% url 'usuario:login' %}">
                 Entrar
             </a>
         </p>

@@ -10,7 +10,7 @@ def cadastro(request):
      if request.method == 'POST':
           username = request.POST.get('username')
           email = request.POST.get('email')
-          password = request.POST.get('password')
+          password = request.POST.get('password1')
           password2 = request.POST.get('password2')
 
           if password != password2:

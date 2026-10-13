@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos - MafeBeauty</title>
+</head>
+
+<body>
+
+    <h1>Produtos</h1>
+
+    <a href="{% url 'produto_novo' %}">
+        Cadastrar novo produto
+    </a>
+
+    <form method="get">
+        <input
+            type="text"
+            name="q"
+            placeholder="Buscar produto..."
+            value="{{ request.GET.q }}"
+        >
+        <button type="submit">Buscar</button>
+    </form>
+
+    <hr>
+
+    {% if produtos %}
+
+        {% for produto in produtos %}
+
+            <div>
+                <h2>{{ produto.nome }}</h2>
+
+                <p>{{ produto.descricao }}</p>
+
+                <p>
+                    <strong>Preço:</strong>
+                    R$ {{ produto.preco }}
+                </p>
+
+                <p>
+                    <strong>Categoria:</strong>
+                    {{ produto.categoria }}
+                </p>
+
+                <p>
+                    <strong>Estoque:</strong>
+                    {{ produto.estoque }}
+                </p>
+
+                <a href="{% url 'produto_detalhe' produto.pk %}">
+                    Ver detalhes
+                </a>
+
+                <a href="{% url 'produto_editar' produto.pk %}">
+                    Editar
+                </a>
+
+                <a href="{% url 'produto_excluir' produto.pk %}">
+                    Excluir
+                </a>
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>Nenhum produto cadastrado.</p>
+
+    {% endif %}
+
+</body>
+</html>

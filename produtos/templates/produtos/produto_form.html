@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% if object %}
+            Editar Produto
+        {% else %}
+            Cadastrar Produto
+        {% endif %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        {% if object %}
+            <h1>Editar Produto</h1>
+        {% else %}
+            <h1>Cadastrar Produto</h1>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">
+                {% if object %}
+                    Salvar alterações
+                {% else %}
+                    Cadastrar produto
+                {% endif %}
+            </button>
+
+            <a href="{% url 'produto_lista' %}">
+                Cancelar
+            </a>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

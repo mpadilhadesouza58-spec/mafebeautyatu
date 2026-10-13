@@ -1,8 +1,14 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 
-from .models import Produto
-from .forms import ProdutoForm
+from .models import Produto, Promocao
+from .forms import ProdutoForm, PromocaoForm
 
 
 class ProdutoListView(ListView):
@@ -45,4 +51,11 @@ class ProdutoUpdateView(UpdateView):
 class ProdutoDeleteView(DeleteView):
     model = Produto
     template_name = 'produtos/produto_confirm_delete.html'
+    success_url = reverse_lazy('produto_lista')
+
+
+class PromocaoCreateView(CreateView):
+    model = Promocao
+    form_class = PromocaoForm
+    template_name = 'produtos/promocao_form.html'
     success_url = reverse_lazy('produto_lista')

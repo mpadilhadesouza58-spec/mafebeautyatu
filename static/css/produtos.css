@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #FFFAFC;
+    color: #29252A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+a {
+    color: #514650;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: #BD7E9C;
+}
+
+/* =========================================
+   LISTAGEM DE PRODUTOS
+   ========================================= */
+
+body > h1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 45px 20px 30px;
+}
+
+body > a {
+    display: table;
+    margin: 0 auto 25px;
+    padding: 12px 20px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+body > a:hover {
+    background-color: #514650;
+    color: #FFFFFF;
+}
+
+body > form:not(:has(textarea)) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+body > form input[type="text"] {
+    width: 320px;
+    max-width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #F0E4EB;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #29252A;
+}
+
+body > form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+body > form button:hover {
+    background-color: #514650;
+}
+
+body > hr {
+    border: none;
+    border-top: 1px solid #F2E8EE;
+    margin: 30px 5%;
+}
+
+/* Cartões de produtos */
+body > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+    min-height: 260px;
+    margin: 15px 2.8%;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #F4EAF0;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(60, 35, 50, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(60, 35, 50, 0.08);
+}
+
+body > div h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #29252A;
+}
+
+body > div p {
+    color: #777078;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+body > div p strong {
+    color: #514650;
+}
+
+body > div a {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+    font-size: 13px;
+}
+
+body > div a:first-of-type {
+    padding: 9px 13px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+body > div a:first-of-type:hover {
+    background-color: #514650;
+}
+
+/* Mensagem quando não há produtos */
+body > p {
+    margin: 35px auto;
+    padding: 30px 20px;
+    max-width: 650px;
+    text-align: center;
+    background-color: #FFF0F6;
+    border-radius: 8px;
+    color: #514650;
+}
+
+/* =========================================
+   FORMULÁRIO DE CADASTRO E EDIÇÃO
+   ========================================= */
+
+body:has(textarea) {
+    min-height: 100vh;
+    padding: 35px 5%;
+    background-color: #FFFAFC;
+}
+
+/* Título do formulário */
+body:has(textarea) h1 {
+    text-align: center;
+    font-size: clamp(26px, 3vw, 36px);
+    margin: 10px auto 30px;
+    color: #29252A;
+}
+
+/* Cartão do formulário */
+body:has(textarea) form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(22px, 4vw, 45px);
+
+    background-color: #FFFFFF;
+    border: 1px solid #F0E4EB;
+    border-radius: 12px;
+    box-shadow: 0 5px 24px rgba(60, 35, 50, 0.06);
+}
+
+/* Rótulos dos campos */
+body:has(textarea) form label {
+    display: block;
+    margin: 8px 0 2px;
+    color: #514650;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Campos de entrada */
+body:has(textarea) form input:not([type="hidden"]):not([type="submit"]),
+body:has(textarea) form textarea,
+body:has(textarea) form select {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+
+    background-color: #FFFCFE;
+    color: #29252A;
+    border: 1px solid #EADFE6;
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* Campo de descrição */
+body:has(textarea) form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Lista de categorias */
+body:has(textarea) form select {
+    cursor: pointer;
+}
+
+/* Destaque ao selecionar os campos */
+body:has(textarea) form input:focus,
+body:has(textarea) form textarea:focus,
+body:has(textarea) form select:focus {
+    outline: none;
+    border-color: #D4A1B8;
+    box-shadow: 0 0 0 3px rgba(212, 161, 184, 0.15);
+}
+
+/* Botão de cadastrar ou salvar */
+body:has(textarea) form button,
+body:has(textarea) form input[type="submit"],
+body:has(textarea) form button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 13px 18px;
+
+    background-color: #29252A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+body:has(textarea) form button:hover,
+body:has(textarea) form input[type="submit"]:hover {
+    background-color: #514650;
+}
+
+/* Botão Cancelar */
+body:has(textarea) a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 12px auto 0;
+    padding: 12px 24px;
+
+    background-color: #F8EAF1;
+    color: #514650;
+    border: 1px solid #EAD5E1;
+    border-radius: 6px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+body:has(textarea) a:hover {
+    background-color: #F0DCE7;
+    color: #29252A;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 900px) {
+    body > div {
+        width: 42%;
+        margin: 15px 3.5%;
+    }
+}
+
+@media (max-width: 600px) {
+    body > h1 {
+        font-size: 27px;
+        margin-top: 30px;
+    }
+
+    body > div {
+        display: block;
+        width: auto;
+        min-height: auto;
+        margin: 18px 16px;
+        padding: 22px;
+    }
+
+    body > form:not(:has(textarea)) {
+        align-items: stretch;
+    }
+
+    body > form input[type="text"] {
+        width: 100%;
+    }
+
+    body > form button {
+        width: 100%;
+    }
+
+    body:has(textarea) {
+        padding: 25px 14px;
+    }
+
+    body:has(textarea) form {
+        padding: 22px 18px;
+    }
+
+    body:has(textarea) form textarea {
+        min-height: 120px;
+    }
+}
+/* Botões de cadastro lado a lado */
+
+.botoes-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px auto;
+}
+
+.botoes-cadastro .botao-cadastro {
+    display: inline-block;
+    padding: 13px 22px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.botoes-cadastro .botao-cadastro:hover {
+    background-color: #514650;
+    color: #FFFFFF;
+}
+
+@media (max-width: 480px) {
+    .botoes-cadastro {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .botoes-cadastro .botao-cadastro {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

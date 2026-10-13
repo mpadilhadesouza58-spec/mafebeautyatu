@@ -6,16 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Produtos - MafeBeauty</title>
+    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 </head>
 
 <body>
 
     <h1>Produtos</h1>
 
-    <a href="{% url 'produto_novo' %}">
+    <a href="{% url 'produto_novo' %}" class="botao-cadastro">
         Cadastrar novo produto
     </a>
 
+    <a href="{% url 'promocao_nova' %}" class="botao-cadastro">
+    Cadastrar promoção
+    </a>
     <form method="get">
         <input
             type="text"

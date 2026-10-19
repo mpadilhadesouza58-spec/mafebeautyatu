@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,17 +9,19 @@
     <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 </head>
 <body>
-    <h1>Cadastrar promoção</h1>
+    <div class="container">
+        <h1>Cadastrar promoção</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <button type="submit">Cadastrar promoção</button>
+            <button type="submit">Cadastrar promoção</button>
 
-        <a href="{% url 'produto_lista' %}">
-            Cancelar
-        </a>
-    </form>
+            <a href="{% url 'produto_lista' %}">
+                Cancelar
+            </a>
+        </form>
+    </div>
 </body>
 </html>

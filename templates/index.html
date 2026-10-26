@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
@@ -8,243 +9,13 @@
 
     <title>Mafe Beauty | Makeup & Attitude</title>
 
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <style>
-        :root {
-            --chilli: #AA0003;
-            --pink: #FFA1C2;
-            --ballet: #FFD6DE;
-            --lemon: #FFF3B2;
-            --cream: #FFF8F8;
-            --ink: #35151D;
-        }
-
-        body {
-            background: var(--cream);
-            color: var(--ink);
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar-mafe {
-            background: var(--ballet);
-            border-bottom: 3px solid var(--chilli);
-        }
-
-        .brand-mafe {
-            color: var(--chilli);
-            font-size: 1.6rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
-
-        .brand-mafe:hover {
-            color: var(--chilli);
-        }
-
-        .navbar-mafe .nav-link {
-            color: var(--ink);
-            font-weight: bold;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
-
-        .navbar-mafe .nav-link:hover {
-            color: var(--chilli);
-        }
-
-        .btn-mafe {
-            display: inline-block;
-            padding: 10px 20px;
-            background: var(--chilli);
-            color: white;
-            border: 2px solid var(--chilli);
-            border-radius: 3px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 0.2s;
-        }
-
-        .btn-mafe:hover {
-            background: var(--pink);
-            color: var(--chilli);
-            border-color: var(--chilli);
-        }
-
-        .stripe-banner {
-            padding: 13px;
-            text-align: center;
-            background: repeating-linear-gradient(
-                90deg,
-                var(--chilli) 0,
-                var(--chilli) 28px,
-                var(--pink) 28px,
-                var(--pink) 56px
-            );
-        }
-
-        .stripe-banner span {
-            display: inline-block;
-            padding: 7px 18px;
-            background: var(--ballet);
-            color: var(--chilli);
-            font-size: 0.8rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        .hero-mafe {
-            position: relative;
-            background: var(--pink);
-        }
-
-        .hero-mafe .carousel-item img {
-            display: block;
-            width: 100%;
-            height: 470px;
-            object-fit: cover;
-        }
-
-        .hero-caption {
-            position: absolute;
-            z-index: 2;
-            left: 7%;
-            bottom: 10%;
-            width: min(460px, 86%);
-            padding: 25px;
-            background: var(--ballet);
-            border: 3px solid var(--chilli);
-            color: var(--chilli);
-        }
-
-        .hero-caption h1 {
-            margin: 10px 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.3rem, 5vw, 4.5rem);
-            font-weight: 900;
-            line-height: 0.98;
-        }
-
-        .hero-caption p {
-            margin-bottom: 0;
-        }
-
-        .section-label {
-            color: var(--chilli);
-            font-size: 0.75rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            color: var(--chilli);
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 900;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
-
-        .promo-section {
-            padding: 50px 0;
-            background: var(--ballet);
-            border-top: 3px solid var(--chilli);
-            border-bottom: 3px solid var(--chilli);
-        }
-
-        .promo-card {
-            height: 100%;
-            overflow: hidden;
-            background: white;
-            border: 2px solid var(--chilli);
-        }
-
-        .promo-card .card-body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 22px;
-        }
-
-        .promo-card h3 {
-            color: var(--chilli);
-            font-size: 1.1rem;
-            font-weight: 900;
-        }
-
-        .promo-tag {
-            display: inline-block;
-            padding: 5px 9px;
-            background: var(--lemon);
-            color: var(--chilli);
-            font-size: 0.7rem;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        .promo-price {
-            color: var(--chilli);
-            font-size: 1.2rem;
-            font-weight: 900;
-        }
-
-        .promo-card .btn-mafe {
-            margin-top: auto;
-        }
-
-        .mafe-note {
-            padding: 40px 20px;
-            background: var(--lemon);
-            border: 2px solid var(--chilli);
-            text-align: center;
-        }
-
-        .mafe-note h2 {
-            color: var(--chilli);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            font-weight: 900;
-        }
-
-        .footer-mafe {
-            padding: 30px 15px;
-            background: var(--chilli);
-            color: white;
-            text-align: center;
-        }
-
-        .brand-footer {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 767px) {
-            .hero-mafe .carousel-item img {
-                height: 360px;
-            }
-
-            .hero-caption {
-                left: 5%;
-                bottom: 7%;
-                padding: 16px;
-            }
-
-            .hero-caption h1 {
-                font-size: 2.4rem;
-            }
-
-            .stripe-banner span {
-                font-size: 0.65rem;
-                letter-spacing: 1px;
-            }
-        }
-    </style>
+    <!-- CSS da Home -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
@@ -363,7 +134,7 @@
 
     </div>
 
-    <!-- CHAMADA DO CARROSSEL -->
+    <!-- TEXTO DO BANNER -->
     <div class="hero-caption">
         <div class="section-label">Your makeup era</div>
 

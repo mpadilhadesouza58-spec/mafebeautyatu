@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-
-def login(request):
-     return render(request, 'usuario/login.html')
 
 def cadastro(request):
      if request.method == 'POST':
@@ -31,3 +29,7 @@ def cadastro(request):
           return redirect('usuario:login')
 
      return render(request, 'usuario/cadastro.html')
+
+@login_required
+def dashboard_admin(request):
+    return render(request, 'usuarios/aluno/dashboard.html')

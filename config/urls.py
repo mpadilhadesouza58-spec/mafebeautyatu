@@ -25,4 +25,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('produtos/', include('produtos.urls')),
     path('contato/', contato, name='contato'),
-    path('promocoes/', promocoes, name='promocoes'),]
+    path('promocoes/', promocoes, name='promocoes'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('categorias/', include('categorias.urls')),
+]

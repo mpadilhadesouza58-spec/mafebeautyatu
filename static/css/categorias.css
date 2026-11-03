@@ -1,78 +1,181 @@
-/* Página de categorias */
+
+/* CATEGORIAS - MAFE BEAUTY */
+
+:root {
+    --vermelho: #B0000B;
+    --rosa-claro: #FFD6DF;
+    --rosa-forte: #FF9FBE;
+    --creme: #FFF2C0;
+    --branco: #FFFFFF;
+}
+
+/* ÁREA PRINCIPAL */
 
 .secao-categorias {
-    padding: 35px 20px 45px;
+    background-color: var(--rosa-claro);
+    padding: 50px 25px;
+    min-height: 70vh;
     text-align: center;
-    background-color: #fffafc;
 }
 
 .secao-categorias h2 {
-    color: #e45d8a;
-    margin-bottom: 10px;
+    color: var(--vermelho);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.descricao {
-    color: #555555;
-    margin-bottom: 30px;
+.introducao-categorias {
+    color: var(--vermelho);
+    font-size: 16px;
+    margin-bottom: 35px;
 }
 
-/* Organização dos cartões */
+/* FORMULÁRIO DE CADASTRO */
+
+.cadastro-categoria {
+    background-color: var(--branco);
+    border: 2px solid var(--vermelho);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 550px;
+    margin: 0 auto 45px;
+    box-shadow: 0 5px 15px rgba(176, 0, 11, 0.1);
+}
+
+.cadastro-categoria h3 {
+    color: var(--vermelho);
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.cadastro-categoria form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.cadastro-categoria label {
+    color: var(--vermelho);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cadastro-categoria input,
+.cadastro-categoria textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--rosa-forte);
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background-color: #FFFAFC;
+}
+
+.cadastro-categoria textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.cadastro-categoria input:focus,
+.cadastro-categoria textarea:focus {
+    outline: 2px solid var(--vermelho);
+    border-color: var(--vermelho);
+}
+
+/* BOTÃO CADASTRAR */
+
+.cadastro-categoria button {
+    background-color: var(--vermelho);
+    color: var(--branco);
+    border: none;
+    border-radius: 7px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.cadastro-categoria button:hover {
+    background-color: #850008;
+    transform: translateY(-2px);
+}
+
+/* CATEGORIAS CADASTRADAS */
 
 .categorias {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(
+        auto-fit, minmax(250px, 1fr)
+    );
+    gap: 25px;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* Cartões */
-
 .categoria {
-    background-color: #ffffff;
-    border: 1px solid #fcbad5;
+    background-color: var(--branco);
+    border: 2px solid var(--vermelho);
     border-radius: 12px;
-    padding: 22px 16px;
-    box-shadow: 0 4px 10px rgba(228, 93, 138, 0.10);
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(176, 0, 11, 0.08);
+    transition: 0.3s;
 }
 
 .categoria:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(228, 93, 138, 0.18);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(176, 0, 11, 0.15);
 }
 
 .categoria h3 {
-    color: #e45d8a;
-    margin-top: 0;
+    color: var(--vermelho);
+    font-size: 22px;
     margin-bottom: 15px;
 }
 
 .categoria p {
-    color: #444444;
+    color: #4A3030;
+    font-size: 15px;
     line-height: 1.6;
-    margin: 8px 0;
 }
 
 .categoria strong {
-    color: #d94b7a;
+    color: var(--vermelho);
 }
 
-/* Adaptação para telas menores */
+/* QUANDO NÃO EXISTEM CATEGORIAS */
 
-@media (max-width: 900px) {
-    .categorias {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+.sem-categorias {
+    grid-column: 1 / -1;
+    background-color: var(--creme);
+    border: 1px solid var(--vermelho);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--vermelho);
+    font-weight: bold;
+}
+
+/* ADAPTAÇÃO PARA CELULAR */
+
+@media (max-width: 600px) {
+    .secao-categorias {
+        padding: 30px 15px;
     }
-}
 
-@media (max-width: 500px) {
+    .secao-categorias h2 {
+        font-size: 26px;
+    }
+
+    .cadastro-categoria {
+        padding: 20px;
+    }
+
     .categorias {
         grid-template-columns: 1fr;
     }
-
-    .secao-categorias {
-        padding: 25px 15px;
-    }
 }
-

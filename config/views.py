@@ -20,3 +20,7 @@ def categorias(request):
 
 def promocoes(request):
     return render(request, 'promocoes.html')
+
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

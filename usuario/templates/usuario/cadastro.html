@@ -56,14 +56,14 @@
             </div>
 
             <div class="campo">
-                <label for="id_password1">
+                <label for="id_password">
                     Senha
                 </label>
 
                 <input
                     type="password"
-                    name="password1"
-                    id="id_password1"
+                    name="password"
+                    id="id_password"
                     placeholder="Digite sua senha"
                     required
                 >
@@ -97,7 +97,7 @@
 
         <p class="login">
             Já possui uma conta?
-            <a href="{% url 'usuario:login' %}">
+            <a href="{% url 'login' %}">
                 Entrar
             </a>
         </p>

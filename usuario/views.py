@@ -13,11 +13,11 @@ def cadastro(request):
 
           if password != password2:
                messages.error(request, 'As senhas não são iguais.')
-               return redirect('usuario:cadastro')
+               return redirect('login:cadastro')
 
           if User.objects.filter(username=username).exists():
                messages.error(request, 'Esse nome de usuário já existe.')
-               return redirect('usuario:cadastro')
+               return redirect('login:cadastro')
 
           User.objects.create_user(
                username=username,
@@ -32,4 +32,4 @@ def cadastro(request):
 
 @login_required
 def dashboard_admin(request):
-    return render(request, 'usuarios/aluno/dashboard.html')
+    return render(request, 'login/admin/dashboard.html')

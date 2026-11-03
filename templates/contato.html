@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 
@@ -21,33 +22,115 @@
 
 <nav>
     <a href="/">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Categorias</a>
+    <a href="/produtos/">Produtos</a>
+    <a href="/categorias/">Categorias</a>
     <a href="/contato/">Contato</a>
 </nav>
 
 <main>
 
     <section class="contato">
+
         <h2>Fale Conosco</h2>
 
-        <p><strong>Email:</strong> contato@mafebeauty.com</p>
+        <p class="introducao-contato">
+            Tem alguma dúvida ou sugestão?
+            Entre em contato com a Mafe Beauty!
+        </p>
 
-        <p><strong>Telefone:</strong> (69) 99999-9999</p>
+        <!-- INFORMAÇÕES DE CONTATO -->
 
-        <p><strong>Instagram:</strong> @mafebeauty</p>
+        <div class="informacoes-contato">
 
-        <p><strong>Localização:</strong> Cacoal - RO</p>
+            <h3>Nossos contatos</h3>
 
-        <form>
-            <input type="text" placeholder="Seu nome" required>
+            <p>
+                <strong>E-mail:</strong>
+                contato@mafebeauty.com
+            </p>
 
-            <input type="email" placeholder="Seu email" required>
+            <p>
+                <strong>Telefone:</strong>
+                (69) 99999-9999
+            </p>
 
-            <textarea placeholder="Digite sua mensagem"></textarea>
+            <p>
+                <strong>Instagram:</strong>
+                @mafebeauty
+            </p>
 
-            <button type="submit" class="botao">Enviar</button>
-        </form>
+            <p>
+                <strong>Localização:</strong>
+                Cacoal - RO
+            </p>
+
+        </div>
+
+        <!-- FORMULÁRIO DE CONTATO -->
+
+        <div class="formulario-contato">
+
+            <h3>Envie sua mensagem</h3>
+
+            {% if mensagem_enviada %}
+                <p class="mensagem-sucesso">
+                    Sua mensagem foi enviada com sucesso!
+                </p>
+            {% endif %}
+
+            <form method="POST" action="{% url 'contato' %}">
+                {% csrf_token %}
+
+                <label for="nome">Seu nome:</label>
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="email">Seu e-mail:</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="assunto">Assunto:</label>
+
+                <input
+                    type="text"
+                    id="assunto"
+                    name="assunto"
+                    placeholder="Sobre o que deseja falar?"
+                    maxlength="150"
+                    required
+                >
+
+                <label for="mensagem">Mensagem:</label>
+
+                <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    placeholder="Digite sua mensagem"
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit" class="botao">
+                    Enviar mensagem
+                </button>
+
+            </form>
+
+        </div>
+
     </section>
 
 </main>

@@ -34,12 +34,12 @@ As principais tecnologias utilizadas no desenvolvimento do projeto são:
 
 ## Equipe
 
-| Integrante               | Responsabilidade                                                       |
-|--------------------------| ---------------------------------------------------------------------- |
-| **Maria Eduara Padilha** | Liderança do projeto, CSS, README e desenvolvimento do app `produtos`  |
-| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates |
-| **Maria Clara**          | Desenvolvimento da página de contato                                   |
-| **Mayara**               | Revisão dos templates, navegação, responsividade e acabamento visual   |
+| Integrante               | Responsabilidade                                                                                                            |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Maria Eduara Padilha** | Liderança do projeto, CSS, README e desenvolvimento do app `produtos`                                                       |
+| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates                                                      |
+| **Maria Clara**          | Desenvolvimento da página de contato                                                                                        |
+| **Mayara**               | Revisão dos templates, navegação, responsividade e acabamento visual e criação do app 'usuarios' juntamente a tela de login |
 
 ### Maria Eduarda Padilha — Produto + Liderança
 
@@ -90,6 +90,8 @@ Responsável pela revisão dos templates e pelo acabamento visual e de navegaç�
 * Conferir o uso do Bootstrap;
 * Corrigir pequenos problemas visuais;
 * Testar as páginas no navegador.
+* criação do app 'usuarios'
+* criação da tela de login
 
 ---
 
@@ -103,6 +105,14 @@ Responsável pela revisão dos templates e pelo acabamento visual e de navegaç�
 O app `produtos` será responsável pelo gerenciamento dos produtos da loja MafeBeauty.
 
 O app concentrará as funcionalidades relacionadas ao cadastro, visualização, edição e exclusão dos produtos.
+
+### `usuarios`
+**Responsável:** Mayara Borges
+
+**Finalidade:**
+O app `usuarios` será responsável pela definição de acesso de caa um, apartir da tela de login.
+
+O app concentrará as funcionalidades relacionadas ao login, contato e acesso restrito para cada usuario.
 
 ---
 
@@ -152,7 +162,7 @@ A página de contato será responsável por apresentar as informações da loja 
 
 Caso necessário, será desenvolvida uma View e uma URL específica para a página.
 
-### Templates e acabamento
+### app usuarios e tela de login
 
 **Responsável:** Mayara
 
@@ -203,7 +213,7 @@ Será realizada a revisão dos templates existentes, verificando:
 | Informações da loja | Inserção e organização das informações de contato |
 | Testes              | Testar o funcionamento da página                  |
 
-### Mayara — Templates e Acabamento
+### Mayara — Templates e Acabamento e criação do app usuarios
 
 | Arquivo/Área   | Responsabilidade                                       |
 | -------------- | ------------------------------------------------------ |
@@ -221,7 +231,7 @@ Será realizada a revisão dos templates existentes, verificando:
 
 A divisão das tarefas foi realizada para que cada integrante tenha uma área específica do projeto, facilitando o desenvolvimento e a integração das funcionalidades.
 
-A **Maria Eduarda Padilha** ficará responsável pelo sistema de produtos e pela liderança do projeto. O **Felipe** ficará responsável pela integração do Django e pela Home. A **Maria Clara** ficará responsável pela página de contato. A **Mayara** ficará responsável pela revisão dos templates, navegação, responsividade e acabamento visual.
+A **Maria Eduarda Padilha** ficará responsável pelo sistema de produtos e pela liderança do projeto. O **Felipe** ficará responsável pela integração do Django e pela Home. A **Maria Clara** ficará responsável pela página de contato. A **Mayara** ficará responsável pela revisão dos templates, navegação restrita de cada usuario atravez da tela de login e criação de 'usuarios'.
 
 Dessa forma, as partes desenvolvidas individualmente poderão ser integradas em um único sistema web funcional.
 

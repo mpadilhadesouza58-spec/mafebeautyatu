@@ -1,0 +1,478 @@
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFAFC;
+    color: #29252A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+a {
+    color: #514650;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: #BD7E9C;
+}
+
+/* =========================================
+   LISTAGEM DE PRODUTOS
+   ========================================= */
+
+body > h1 {
+    margin: 45px 20px 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+body > a {
+    display: table;
+    margin: 0 auto 25px;
+    padding: 12px 20px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+body > a:hover {
+    background-color: #514650;
+    color: #FFFFFF;
+}
+
+body > form:not(:has(textarea)) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+body > form input[type="text"] {
+    width: 320px;
+    max-width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #F0E4EB;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    color: #29252A;
+}
+
+body > form button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+body > form button:hover {
+    background-color: #514650;
+}
+
+body > hr {
+    margin: 30px 5%;
+    border: none;
+    border-top: 1px solid #F2E8EE;
+}
+
+/* =========================================
+   CARTÕES DOS PRODUTOS
+   ========================================= */
+
+body > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+    min-height: 260px;
+    margin: 15px 2.8%;
+    padding: 25px;
+    background-color: #FFFFFF;
+    border: 1px solid #F4EAF0;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(60, 35, 50, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(60, 35, 50, 0.08);
+}
+
+body > div h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #29252A;
+}
+
+body > div p {
+    color: #777078;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+body > div p strong {
+    color: #514650;
+}
+
+body > div a {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+    font-size: 13px;
+}
+
+body > div a:first-of-type {
+    padding: 9px 13px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+body > div a:first-of-type:hover {
+    background-color: #514650;
+}
+
+/* Mensagem quando não há produtos */
+body > p {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #FFF0F6;
+    border-radius: 8px;
+    color: #514650;
+}
+
+/* =========================================
+   FORMULÁRIO DE CADASTRO E EDIÇÃO
+   Identificação pela classe .container
+   ========================================= */
+
+/* Fundo da página */
+body:has(.container) {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px 2%;
+    background-color: #FFFAFC;
+}
+
+/* Container ocupa a largura disponível */
+body:has(.container) .container {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: calc(100vh - 48px);
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Título */
+body:has(.container) .container h1 {
+    width: 100%;
+    margin: 10px 0 25px;
+    color: #29252A;
+    text-align: center;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+}
+
+/* Formulário em largura total */
+body:has(.container) .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(20px, 3vw, 40px);
+
+    background-color: #FFFFFF;
+    border: 1px solid #F0E4EB;
+    border-radius: 12px;
+    box-shadow: 0 5px 24px rgba(60, 35, 50, 0.06);
+}
+
+/* Cada campo gerado por form.as_p */
+body:has(.container) .container form p {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px;
+}
+
+/* Rótulos */
+body:has(.container) .container form label {
+    display: block;
+    margin: 0 0 7px;
+    color: #514650;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Campos de entrada, categorias e descrição */
+body:has(.container) .container form input:not([type="hidden"]):not([type="submit"]),
+body:has(.container) .container form select,
+body:has(.container) .container form textarea {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: 44px;
+    margin: 0;
+    padding: 12px 14px;
+
+    background-color: #FFFCFE;
+    color: #29252A;
+    border: 1px solid #EADFE6;
+    border-radius: 6px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* Campo de descrição */
+body:has(.container) .container form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Lista de categorias */
+body:has(.container) .container form select {
+    cursor: pointer;
+}
+
+/* Foco nos campos */
+body:has(.container) .container form input:focus,
+body:has(.container) .container form select:focus,
+body:has(.container) .container form textarea:focus {
+    outline: none;
+    border-color: #D4A1B8;
+    box-shadow: 0 0 0 3px rgba(212, 161, 184, 0.15);
+}
+
+/* Botão cadastrar ou salvar */
+body:has(.container) .container form button,
+body:has(.container) .container form input[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 13px 18px;
+
+    background-color: #29252A;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+body:has(.container) .container form button:hover,
+body:has(.container) .container form input[type="submit"]:hover {
+    background-color: #514650;
+}
+
+/* Botão Cancelar dentro do formulário */
+body:has(.container) .container form a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 12px auto 0;
+    padding: 12px 24px;
+
+    background-color: #F8EAF1;
+    color: #514650;
+    border: 1px solid #EAD5E1;
+    border-radius: 6px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+body:has(.container) .container form a:hover {
+    background-color: #F0DCE7;
+    color: #29252A;
+}
+
+/* =========================================
+   BOTÕES DE CADASTRO DA LISTAGEM
+   ========================================= */
+
+.botoes-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px auto;
+}
+
+.botoes-cadastro .botao-cadastro {
+    display: inline-block;
+    padding: 13px 22px;
+    background-color: #29252A;
+    color: #FFFFFF;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.botoes-cadastro .botao-cadastro:hover {
+    background-color: #514650;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 900px) {
+    body > div {
+        width: 42%;
+        margin: 15px 3.5%;
+    }
+}
+
+@media (max-width: 600px) {
+    body > h1 {
+        margin-top: 30px;
+        font-size: 27px;
+    }
+
+    body > div {
+        display: block;
+        width: auto;
+        min-height: auto;
+        margin: 18px 16px;
+        padding: 22px;
+    }
+
+    body > form:not(:has(textarea)) {
+        align-items: stretch;
+    }
+
+    body > form input[type="text"] {
+        width: 100%;
+    }
+
+    body > form button {
+        width: 100%;
+    }
+
+    body:has(.container) {
+        padding: 16px 10px;
+    }
+
+    body:has(.container) .container {
+        min-height: calc(100vh - 32px);
+    }
+
+    body:has(.container) .container form {
+        padding: 20px 16px;
+    }
+
+    body:has(.container) .container form textarea {
+        min-height: 120px;
+    }
+
+    .botoes-cadastro {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .botoes-cadastro .botao-cadastro {
+        width: 100%;
+    }
+}
+/* Ajuste do tamanho do formulário */
+body .container {
+    width: 85% !important;
+    max-width: 900px !important;
+    min-height: auto !important;
+    margin: 35px auto !important;
+    padding: 30px !important;
+    box-sizing: border-box;
+}
+
+body .container h1 {
+    margin-bottom: 24px;
+}
+
+body .container form {
+    gap: 12px;
+}
+
+body .container form textarea {
+    min-height: 90px;
+}
+
+@media (max-width: 600px) {
+    body .container {
+        width: 95% !important;
+        margin: 15px auto !important;
+        padding: 20px !important;
+    }
+}
+
+/* Formulário de promoções */
+body:has(.container) .container {
+    width: 85%;
+    max-width: 900px;
+    min-height: auto;
+    margin: 35px auto;
+    padding: 30px;
+}
+
+body:has(.container) .container form {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    body:has(.container) .container {
+        width: 95%;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    body:has(.container) .container form {
+        padding: 18px 14px;
+    }
+}

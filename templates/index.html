@@ -1,183 +1,270 @@
+
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Maquiagems</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="icon" href="img/index/logo.png" type="image/png">
-</head>
-    <nav>
-        <a class="menu-btn" href="index.html">Início</a>
-    <a class="menu-btn" href="#produtos">Produtos</a>
-    <a class="menu-btn" href="#">Promoções</a>
-    <a class="menu-btn" href="contato.html">Contato</a>
-    </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fffafc;
-        }
+    <title>Mafe Beauty | Makeup & Attitude</title>
 
-        header {
-            background-color: #ffa1c0;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-        nav {
-            background-color: #fcbad5;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin-bottom: 25px;
-        }
-
-        .banner {
-            background-color: #fce4ec;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .botao {
-            padding: 10px 20px;
-            background-color: #e45d8a;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .botao:hover {
-            background-color: #d94b7a;
-        }
-
-        .produtos {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .produto {
-            background-color: white;
-            border: 1px solid #f3c1d3;
-            padding: 20px;
-            width: 250px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .produto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-        }
-
-        /* IMAGENS DOS PRODUTOS */
-        .produto img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .produto h3 {
-            color: #d94b7a;
-        }
-
-        footer {
-            background-color: #eea4c1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+    <!-- CSS da Home -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 
 <body>
 
-<header>
-    <h1>Mafe-Beauty</h1>
-    <p>Seu catálogo online de maquiagem</p>
-</header>
+<!-- MENU PRINCIPAL -->
+<nav class="navbar navbar-expand-lg navbar-mafe">
+    <div class="container">
 
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Produtos</a>
-    <a href="#">Promoções</a>
-    <a href="#">Contato</a>
+        <a class="navbar-brand brand-mafe" href="/">
+            Mafe Beauty
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Abrir menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/categorias/">Categorias</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contato/">Contato</a>
+                </li>
+
+                <li class="nav-item ms-lg-2">
+                    <a class="btn-mafe" href="/usuarios/login/">
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
 </nav>
+
+<!-- FAIXA LISTRADA -->
+<div class="stripe-banner">
+    <span>★ MAKEUP • GLAMOUR • ATTITUDE • MAKEUP ★</span>
+</div>
+
+<!-- BANNER E CARROSSEL -->
+<section class="hero-mafe">
+
+    <div id="carrosselMafe"
+         class="carousel slide"
+         data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button"
+                    data-bs-target="#carrosselMafe"
+                    data-bs-slide-to="0"
+                    class="active"
+                    aria-current="true"
+                    aria-label="Slide 1"></button>
+
+            <button type="button"
+                    data-bs-target="#carrosselMafe"
+                    data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+
+            <button type="button"
+                    data-bs-target="#carrosselMafe"
+                    data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="{% static 'images/maquiagem1.jpg' %}"
+                     alt="Coleção de maquiagens">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/maquiagem2.jpg' %}"
+                     alt="Maquiagens para os olhos">
+            </div>
+
+            <div class="carousel-item">
+                <img src="{% static 'images/maquiagem3.jpg' %}"
+                     alt="Batons e glosses">
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carrosselMafe"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"
+                  aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#carrosselMafe"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon"
+                  aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+
+    </div>
+
+    <!-- TEXTO DO BANNER -->
+    <div class="hero-caption">
+        <div class="section-label">Your makeup era</div>
+
+        <h1>BE BOLD.<br>BE ICONIC.</h1>
+
+        <p>
+            Sua maquiagem. Suas regras. Seu momento.
+        </p>
+    </div>
+
+</section>
 
 <main>
 
-    <section class="banner">
-        <h2>Destaques da Semana</h2>
-        <p>As melhores maquiagens com preços incríveis!</p>
-        <button class="botao">Ver Produtos</button>
-    </section>
+    <!-- PROMOÇÕES DA SEMANA -->
+    <section class="promo-section">
 
-    <section>
-        <h2>Nossos Produtos</h2>
-        <div class="produtos">
+        <div class="container">
 
-            <div class="produto">
-                <img src="img/index/batom.png" alt="Batom Matte">
-                <h3>Batom Matte</h3>
-                <p>Alta fixação e cores incríveis.</p>
-                <button class="botao">Comprar</button>
-            </div>
+            <p class="section-label text-center">
+                The weekly crush
+            </p>
 
-            <div class="produto">
-                <img src="img/index/base.png" alt="Base Líquida">
-                <h3>Base Líquida</h3>
-                <p>Cobertura perfeita para todos os tipos de pele.</p>
-                <button class="botao">Comprar</button>
-            </div>
+            <h2 class="section-title text-center mb-2">
+                Promoções da Semana
+            </h2>
 
-            <div class="produto">
-                <img src="img/index/paleta.png" alt="Paleta de Sombras">
-                <h3>Paleta de Sombras</h3>
-                <p>Cores vibrantes para qualquer ocasião.</p>
-                <button class="botao">Comprar</button>
+            <p class="text-center mb-4">
+                Seus próximos favoritos estão aqui.
+            </p>
+
+            <div class="row g-4">
+
+                {% for produto in produtos %}
+                    {% if forloop.counter <= 3 %}
+
+                        <div class="col-12 col-md-4">
+                            <article class="promo-card">
+
+                                <div class="card-body">
+
+                                    <span class="promo-tag">
+                                        Em destaque
+                                    </span>
+
+                                    <h3 class="mt-3">
+                                        {{ produto.nome }}
+                                    </h3>
+
+                                    <p>
+                                        {{ produto.descricao|truncatewords:15 }}
+                                    </p>
+
+                                    <p class="promo-price">
+                                        R$ {{ produto.preco }}
+                                    </p>
+
+                                    <a href="/produtos/{{ produto.pk }}/"
+                                       class="btn-mafe">
+                                        Ver produto
+                                    </a>
+
+                                </div>
+                            </article>
+                        </div>
+
+                    {% endif %}
+
+                {% empty %}
+
+                    <div class="col-12">
+                        <div class="mafe-note">
+                            <h2>It's giving makeup!</h2>
+
+                            <p class="mb-0">
+                                Em breve, novidades na nossa vitrine.
+                            </p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
             </div>
 
         </div>
     </section>
 
-    <section>
-        <h2>Sobre a Loja</h2>
-        <p>Somos apaixonados por maquiagem e beleza e por isso oferecemos produtos de qualidade para realçar sua beleza e autoestima.</p>
+    <!-- CHAMADA FINAL -->
+    <section class="container py-5">
+
+        <div class="mafe-note">
+
+            <p class="section-label">
+                Main character energy
+            </p>
+
+            <h2>
+                O look é seu. O impacto também.
+            </h2>
+
+            <p class="mt-3 mb-0">
+                Descubra maquiagens que combinam com sua personalidade.
+            </p>
+
+        </div>
+
     </section>
 
 </main>
 
-<footer>
-    <p>&copy; 2026 - Mafe Beauty | Contato: contato@mafebeauty.com</p>
+<!-- RODAPÉ -->
+<footer class="footer-mafe">
+
+    <p class="brand-footer mb-2">
+        Mafe Beauty ★
+    </p>
+
+    <p class="mb-1">
+        Makeup, glamour & attitude.
+    </p>
+
+    <p class="small mb-0">
+        © 2026 Mafe Beauty. Todos os direitos reservados.
+    </p>
+
 </footer>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
 </html>

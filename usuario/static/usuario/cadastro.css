@@ -1,0 +1,105 @@
+/* Fundo da página */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #fff0f5, #fbd5e5);
+    font-family: Arial, sans-serif;
+}
+.cadastro-container {
+    width: 420px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(190, 70, 130, 0.25);
+    text-align: center;
+}
+/* Logo / nome */
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    color: #c24b7b;
+    margin-bottom: 25px;
+}
+/* Título */
+h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #b84c73;
+    margin: 10px 0;
+}
+/* Subtítulo */
+.subtitulo {
+    color: #9b5068;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+/* Campos */
+.campo {
+    text-align: left;
+    margin-bottom: 18px;
+}
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #7d4056;
+}
+.campo input {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e3a7bd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+/* Quando clicar no campo */
+.campo input:focus {
+    border-color: #c24b7b;
+    box-shadow: 0 0 0 3px rgba(194, 75, 123, 0.12);
+}
+/* Botão */
+button {
+    width: 100%;
+    height: 48px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #b94d73, #c95c85);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(185, 77, 115, 0.3);
+}
+/* Mensagem de sucesso */
+.sucesso {
+    margin-top: 18px;
+    color: #7d4056;
+    font-size: 15px;
+}
+/* Link de entrar */
+.login {
+    margin-top: 8px;
+    color: #7d4056;
+}
+.login a {
+    color: #b84c73;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login a:hover {
+    text-decoration: underline;
+}

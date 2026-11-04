@@ -1,149 +1,181 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
-    background: repeating-linear-gradient(135deg, #fff1f4, #f9e1e7 );
+    background: #FFD6DE;
     min-height: 100vh;
-
+    color: #35151D;
 }
- /* Area principal */
-.login-container {
-    min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Cabeçalho */
+.topo {
+    background: #AA0003;
+    color: #FFF8F8;
+    text-align: center;
     padding: 20px;
 }
-/* Cartão */
 
+.topo h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.topo span {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* Área principal */
+.login-container {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+/* Cartão */
 .login-card {
     width: 100%;
     max-width: 430px;
-    background: white;
-    padding: 45px;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgb(248 122 210 / 0.94);
+    background: #FFF8F8;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #FFA1C2;
+    box-shadow: 0 10px 25px rgba(170, 0, 3, 0.15);
 }
-/* Logo */
 
+/* Logo */
 .logo {
     text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #ef61bc;
-    margin-bottom: 30px;
+    font-size: 45px;
+    color: #AA0003;
 }
-.logo span {
-    font-weight: normal;
-}
-/* Título */
-h1 {
+
+/* Títulos */
+.login-card h1 {
     text-align: center;
     font-family: Georgia, serif;
-    color: #f197d6;
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 38px;
+    color: #AA0003;
+    margin-bottom: 20px;
 }
-/* Subtítulo */
+
+.login-card h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #AA0003;
+}
+
 .subtitulo {
     text-align: center;
-    color: #dd4f6c;
     font-size: 14px;
-    margin-bottom: 30px;
+    margin: 12px 0 30px;
+    color: #35151D;
 }
+
 /* Campos */
 .campo {
     margin-bottom: 20px;
 }
+
 .campo label {
     display: block;
-    margin-bottom: 7px;
-    font-size: 14px;
-    color: #ef31b9;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #AA0003;
 }
+
 .campo input {
     width: 100%;
     padding: 14px;
-    border: 1px solid #e2cdd2;
-    border-radius: 8px;
+    border: 1px solid #FFA1C2;
+    border-radius: 10px;
     outline: none;
     font-size: 15px;
-    transition: 0.3s;
+    background: #FFF8F8;
 }
+
 .campo input:focus {
-    border-color: #b9687a;
-    box-shadow: 0 0 0 3px rgb(237 89 122 / 0.89);
+    border-color: #AA0003;
+    box-shadow: 0 0 0 3px rgba(255, 161, 194, 0.3);
 }
+
 /* Opções */
 .opcoes {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    gap: 10px;
     font-size: 13px;
-    color: #75666a;
+    margin-bottom: 25px;
+    color: #35151D;
 }
+
 .opcoes label {
     display: flex;
-    gap: 6px;
     align-items: center;
+    gap: 6px;
 }
+
 .opcoes a {
-    color: #a45c6c;
+    color: #AA0003;
     text-decoration: none;
 }
-.opcoes a:hover {
-    text-decoration: underline;
-}
+
 /* Botão */
 button {
     width: 100%;
     padding: 15px;
+    background: #AA0003;
+    color: #FFF8F8;
     border: none;
-    border-radius: 8px;
-    background: #a45c6c;
-    color: white;
-    font-size: 14px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 1px;
     cursor: pointer;
     transition: 0.3s;
 }
+
 button:hover {
-    background: #952540;
-    transform: translateY(-1px);
+    background: #35151D;
 }
+
 /* Cadastro */
 .cadastro {
     text-align: center;
     margin-top: 25px;
-    color: #f64e74;
     font-size: 14px;
+    color: #35151D;
 }
+
 .cadastro a {
-    color: #a45c6c;
+    color: #AA0003;
     font-weight: bold;
     text-decoration: none;
 }
-.cadastro a:hover {
+
+.cadastro a:hover,
+.opcoes a:hover {
     text-decoration: underline;
 }
+
 /* Celular */
 @media (max-width: 500px) {
     .login-card {
         padding: 30px 22px;
     }
-    h1 {
-        font-size: 28px;
+
+    .login-card h1 {
+        font-size: 32px;
     }
+
     .opcoes {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        flex-wrap: wrap;
     }
 }

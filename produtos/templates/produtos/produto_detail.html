@@ -1,37 +1,293 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ produto.nome }}</title>
+    <title>{{ produto.nome }} | Mafe Beauty</title>
+
+    <style>
+        :root {
+            --chilli: #AA0003;
+            --pink: #FFA1C2;
+            --ballet: #FFD6DE;
+            --lemon: #FFF3B2;
+            --cream: #FFF8F8;
+            --ink: #35151D;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: var(--ballet);
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* FAIXA DECORATIVA */
+        .faixa-decorativa {
+            width: 100%;
+            height: 22px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--chilli) 0 28px,
+                var(--pink) 28px 56px
+            );
+        }
+
+        /* CABEÇALHO */
+        .topo {
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            color: var(--chilli);
+            font-size: 27px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .subtitulo {
+            margin-top: 8px;
+            color: var(--ink);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        /* ÁREA PRINCIPAL */
+        .area-produto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 65vh;
+            padding: 35px 20px 60px;
+        }
+
+        /* CARTÃO */
+        .detalhe-produto {
+            width: 100%;
+            max-width: 620px;
+            padding: 35px;
+            background: var(--cream);
+            border: 2px solid var(--chilli);
+            box-shadow: 8px 8px 0 rgba(170, 0, 3, 0.12);
+        }
+
+        .etiqueta {
+            display: inline-block;
+            padding: 8px 13px;
+            background: var(--lemon);
+            color: var(--chilli);
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .detalhe-produto h1 {
+            margin: 20px 0;
+            color: var(--chilli);
+            font-family: Georgia, serif;
+            font-size: clamp(28px, 5vw, 40px);
+            text-transform: uppercase;
+        }
+
+        .descricao {
+            margin-bottom: 25px;
+            color: var(--ink);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* INFORMAÇÕES */
+        .informacoes {
+            padding: 15px 0;
+            border-top: 1px solid var(--ballet);
+            border-bottom: 1px solid var(--ballet);
+        }
+
+        .informacoes p {
+            margin: 13px 0;
+            color: var(--ink);
+            font-size: 14px;
+        }
+
+        .informacoes strong {
+            color: var(--chilli);
+        }
+
+        /* PREÇO */
+        .preco-destaque {
+            margin: 25px 0;
+            padding: 18px;
+            background: var(--ballet);
+            border-left: 5px solid var(--chilli);
+        }
+
+        .preco-destaque span {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--ink);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .preco-destaque strong {
+            color: var(--chilli);
+            font-size: 27px;
+        }
+
+        /* BOTÕES */
+        .acoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 19px;
+            background: var(--chilli);
+            border: 2px solid var(--chilli);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: 0.25s ease;
+        }
+
+        .botao:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: var(--chilli);
+            transform: translateY(-2px);
+        }
+
+        .botao-voltar {
+            background: transparent;
+            color: var(--chilli);
+        }
+
+        .botao-excluir {
+            background: var(--ink);
+            border-color: var(--ink);
+        }
+
+        /* RODAPÉ */
+        .rodape {
+            padding: 22px;
+            background: var(--chilli);
+            color: white;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        /* CELULAR */
+        @media (max-width: 600px) {
+            .topo {
+                padding: 22px 15px;
+            }
+
+            .area-produto {
+                padding: 25px 16px 40px;
+            }
+
+            .detalhe-produto {
+                padding: 23px;
+            }
+
+            .acoes {
+                flex-direction: column;
+            }
+
+            .botao {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>{{ produto.nome }}</h1>
+    <div class="faixa-decorativa"></div>
 
-    <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+    <header class="topo">
+        <h2 class="logo">MAFE BEAUTY</h2>
+        <p class="subtitulo">MAKEUP • GLAMOUR • ATTITUDE</p>
+    </header>
 
-    <p><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+    <main class="area-produto">
 
-    <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
+        <section class="detalhe-produto">
 
-    <p><strong>Estoque:</strong> {{ produto.estoque }}</p>
+            <span class="etiqueta">
+                DETALHES DO PRODUTO
+            </span>
 
-    <hr>
+            <h1>{{ produto.nome }}</h1>
 
-    <a href="{% url 'produto_editar' produto.pk %}">
-        Editar produto
-    </a>
+            <p class="descricao">
+                {{ produto.descricao }}
+            </p>
 
-    <a href="{% url 'produto_excluir' produto.pk %}">
-        Excluir produto
-    </a>
+            <div class="informacoes">
 
-    <a href="{% url 'produto_lista' %}">
-        Voltar para produtos
-    </a>
+                <p>
+                    <strong>Categoria:</strong>
+                    {{ produto.categoria }}
+                </p>
+
+                <p>
+                    <strong>Estoque disponível:</strong>
+                    {{ produto.estoque }} unidades
+                </p>
+
+            </div>
+
+            <div class="preco-destaque">
+                <span>PREÇO DO PRODUTO</span>
+                <strong>R$ {{ produto.preco }}</strong>
+            </div>
+
+            <div class="acoes">
+
+                <a href="{% url 'produto_editar' produto.pk %}"
+                   class="botao">
+                    Editar produto
+                </a>
+
+                <a href="{% url 'produto_excluir' produto.pk %}"
+                   class="botao botao-excluir">
+                    Excluir produto
+                </a>
+
+                <a href="{% url 'produto_lista' %}"
+                   class="botao botao-voltar">
+                    Voltar para produtos
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        MAFE BEAUTY • MAKEUP IS AN ATTITUDE
+    </footer>
 
 </body>
 </html>

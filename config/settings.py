@@ -111,8 +111,6 @@ TIME_ZONE = 'America/Porto_Velho'
 USE_I18N = True
 USE_L10N = True
 
-USE_I18N = True
-
 USE_TZ = True
 
 
@@ -134,4 +132,4 @@ MAILERS = {
 
 LOGIN_URL = 'login'
 
-LOGIN_REDIRECT_URL = 'produtos:lista'
+LOGIN_REDIRECT_URL = 'dashboard'

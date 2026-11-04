@@ -4,7 +4,7 @@ from .views import (
     ProdutoDetailView,
     ProdutoCreateView,
     ProdutoUpdateView,
-    ProdutoDeleteView,
+    ProdutoDeleteView, PromocaoCreateView,
 )
 
 urlpatterns = [
@@ -13,5 +13,5 @@ urlpatterns = [
     path('<int:pk>/', ProdutoDetailView.as_view(), name='produto_detalhe'),
     path('<int:pk>/editar/', ProdutoUpdateView.as_view(), name='produto_editar'),
     path('<int:pk>/excluir/', ProdutoDeleteView.as_view(), name='produto_excluir'),
-    #path('promocoes/nova/', PromocaoCreateView.as_view(), name='promocao_nova'),
+    path('promocoes/nova/', PromocaoCreateView.as_view(), name='promocao_nova'),
 ]

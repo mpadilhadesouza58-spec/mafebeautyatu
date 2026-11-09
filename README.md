@@ -34,12 +34,12 @@ As principais tecnologias utilizadas no desenvolvimento do projeto são:
 
 ## Equipe
 
-| Integrante               | Responsabilidade                                                       |
-|--------------------------|------------------------------------------------------------------------|
-| **Maria Eduara Padilha** | Liderança do projeto, CSS, README e desenvolvimento do app `produtos`  |
-| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates |
-| **Maria Clara**          | Desenvolvimento da página de contato                                   |
-| **Mayara**               | Desenvolvimento da página de usuario, login e cadastro                 |
+| Integrante               | Responsabilidade                                                                   |
+|--------------------------|------------------------------------------------------------------------            |
+| **Maria Eduara Padilha** | Liderança do projeto, CSS de produtos, README e desenvolvimento do app `produtos`  |
+| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates             |
+| **Maria Clara**          | Desenvolvimento da página de categoria e contato                                               |
+| **Mayara**               | Desenvolvimento da página de login e cadastro                             |
 
 ### Maria Eduarda Padilha — Produto + Liderança
 
@@ -50,8 +50,8 @@ Responsável pela liderança do projeto e pelo sistema de produtos.
 * Criação, Atualização e manutenção do README;
 * Desenvolvimento do app `produtos`;
 * Model `Produto`;
-* Forms;
-* Views;
+* Forms de produtos;
+* Views de produtos;
 * URLs do produto;
 * Admin do produto.
 
@@ -71,12 +71,11 @@ Responsável pela integração do projeto com o Django e pelo funcionamento da p
 
 Responsável pelo desenvolvimento da página de contato da loja.
 
-* Página de contato;
-* View de contato, caso seja necessária;
-* URL de contato;
-* Template de contato;
-* Informações da loja;
-* Ajustes no `contato.css`;
+* Página de contato e categorias;
+* View de contato e categoria;
+* URL de contato e categoria;
+* Template de contato e categorias;
+* css de contato e categorias
 * Testes da página.
 
 ### Mayara — Templates e Acabamento

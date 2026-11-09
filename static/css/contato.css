@@ -1,5 +1,7 @@
 
-/* CONTATO - MAFE BEAUTY */
+/* =================================
+   MAFE BEAUTY - PÁGINA DE CONTATO
+================================= */
 
 /* PALETA DE CORES */
 :root {
@@ -8,52 +10,127 @@
     --rosa-forte: #FF9FBE;
     --creme: #FFF2C0;
     --branco: #FFFFFF;
+    --texto: #4A3030;
 }
 
-/* ÁREA DE CONTATO */
+/* CONFIGURAÇÃO GERAL */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif;
+    background-color: #FFF2F5 !important;
+}
+
+/* CABEÇALHO */
+body > header.cabecalho-contato {
+    background-color: var(--rosa-claro) !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 18px 15px !important;
+    text-align: center;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.cabecalho-contato h1 {
+    color: var(--vermelho) !important;
+    font-family: Georgia, serif !important;
+    font-size: 32px !important;
+    font-weight: bold !important;
+    letter-spacing: 2px;
+    margin: 0 0 5px !important;
+}
+
+.cabecalho-contato p {
+    color: var(--vermelho) !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+
+/* MENU DE NAVEGAÇÃO */
+body > nav.menu-contato {
+    background-color: var(--vermelho) !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 10px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.menu-contato a {
+    color: var(--branco) !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    padding: 9px 25px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-contato a:hover {
+    background-color: var(--rosa-claro) !important;
+    color: var(--vermelho) !important;
+}
+
+/* ÁREA PRINCIPAL */
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
 
 .contato {
     background-color: var(--rosa-claro);
-    padding: 50px 25px;
+    width: 100%;
     min-height: 75vh;
+    padding: 45px 25px;
     text-align: center;
 }
 
-/* TÍTULO PRINCIPAL */
-
+/* TÍTULO E INTRODUÇÃO */
 .contato h2 {
     color: var(--vermelho);
+    font-family: Georgia, serif;
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin: 0 0 12px;
 }
 
 .introducao-contato {
     color: var(--vermelho);
     font-size: 16px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 /* INFORMAÇÕES DE CONTATO */
-
 .informacoes-contato {
     background-color: var(--creme);
     border: 2px solid var(--vermelho);
     border-radius: 12px;
     padding: 25px;
+    width: 100%;
     max-width: 550px;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
     box-shadow: 0 5px 15px rgba(176, 0, 11, 0.08);
 }
 
 .informacoes-contato h3 {
     color: var(--vermelho);
     font-size: 23px;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 }
 
 .informacoes-contato p {
-    color: #4A3030;
+    color: var(--texto);
     font-size: 15px;
     line-height: 1.8;
     margin-bottom: 10px;
@@ -64,12 +141,12 @@
 }
 
 /* FORMULÁRIO */
-
 .formulario-contato {
     background-color: var(--branco);
     border: 2px solid var(--vermelho);
     border-radius: 12px;
     padding: 30px;
+    width: 100%;
     max-width: 550px;
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba(176, 0, 11, 0.1);
@@ -78,11 +155,10 @@
 .formulario-contato h3 {
     color: var(--vermelho);
     font-size: 23px;
-    margin-bottom: 25px;
+    margin: 0 0 25px;
 }
 
 /* ORGANIZAÇÃO DOS CAMPOS */
-
 .formulario-contato form {
     display: flex;
     flex-direction: column;
@@ -104,8 +180,7 @@
     border-radius: 7px;
     background-color: #FFFAFC;
     font-size: 15px;
-    font-family: inherit;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 .formulario-contato textarea {
@@ -113,8 +188,7 @@
     resize: vertical;
 }
 
-/* QUANDO CLICAR NOS CAMPOS */
-
+/* FOCO NOS CAMPOS */
 .formulario-contato input:focus,
 .formulario-contato textarea:focus {
     outline: 2px solid var(--vermelho);
@@ -122,7 +196,6 @@
 }
 
 /* BOTÃO ENVIAR */
-
 .formulario-contato .botao {
     background-color: var(--vermelho);
     color: var(--branco);
@@ -143,7 +216,6 @@
 }
 
 /* MENSAGEM DE SUCESSO */
-
 .mensagem-sucesso {
     background-color: var(--creme);
     color: var(--vermelho);
@@ -154,9 +226,18 @@
     font-weight: bold;
 }
 
-/* RESPONSIVIDADE */
+/* RODAPÉ */
+footer {
+    margin: 0;
+    text-align: center;
+}
 
+/* RESPONSIVIDADE */
 @media (max-width: 600px) {
+
+    .cabecalho-contato h1 {
+        font-size: 27px !important;
+    }
 
     .contato {
         padding: 30px 15px;

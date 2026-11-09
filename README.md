@@ -34,12 +34,12 @@ As principais tecnologias utilizadas no desenvolvimento do projeto são:
 
 ## Equipe
 
-| Integrante               | Responsabilidade                                                                                                            |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| **Maria Eduara Padilha** | Liderança do projeto, CSS, README e desenvolvimento do app `produtos`                                                       |
-| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates                                                      |
-| **Maria Clara**          | Desenvolvimento da página de contato                                                                                        |
-| **Mayara**               | Revisão dos templates, navegação, responsividade e acabamento visual e criação do app 'usuarios' juntamente a tela de login |
+| Integrante               | Responsabilidade                                                       |
+|--------------------------|------------------------------------------------------------------------|
+| **Maria Eduara Padilha** | Liderança do projeto, CSS, README e desenvolvimento do app `produtos`  |
+| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates |
+| **Maria Clara**          | Desenvolvimento da página de contato                                   |
+| **Mayara**               | Desenvolvimento da página de usuario, login e cadastro                 |
 
 ### Maria Eduarda Padilha — Produto + Liderança
 

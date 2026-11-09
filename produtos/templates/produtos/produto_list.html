@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,6 +13,7 @@
 <body>
 
     <h1>Produtos</h1>
+
     <a href="{% url 'home' %}" class="botao-cadastro botao-inicio">
         Voltar ao início
     </a>
@@ -21,8 +23,9 @@
     </a>
 
     <a href="{% url 'promocao_nova' %}" class="botao-cadastro">
-    Cadastrar promoção
+        Cadastrar promoção
     </a>
+
     <form method="get">
         <input
             type="text"
@@ -59,17 +62,47 @@
                     {{ produto.estoque }}
                 </p>
 
-                <a href="{% url 'produto_detalhe' produto.pk %}">
-                    Ver detalhes
-                </a>
+                <div class="acoes-produto">
 
-                <a href="{% url 'produto_editar' produto.pk %}">
-                    Editar
-                </a>
+                    <a href="{% url 'produto_detalhe' produto.pk %}">
+                        Ver detalhes
+                    </a>
 
-                <a href="{% url 'produto_excluir' produto.pk %}">
-                    Excluir
-                </a>
+                    <a href="{% url 'produto_editar' produto.pk %}">
+                        Editar
+                    </a>
+
+                    <form
+                        method="post"
+                        action="{% url 'produto_excluir' produto.pk %}"
+                        onsubmit="return confirm('Tem certeza que deseja excluir este produto?');"
+                    >
+                        {% csrf_token %}
+
+                        <button
+                            type="submit"
+                            class="botao-excluir"
+                            style="
+                                display: inline-block;
+                                background-color: #AA0003;
+                                color: white;
+                                border: 1px solid #AA0003;
+                                border-radius: 4px;
+                                padding: 10px 15px;
+                                min-height: 40px;
+                                margin: 8px 8px 0 0;
+                                font-family: Arial, Helvetica, sans-serif;
+                                font-size: 13px;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                cursor: pointer;
+                            "
+                        >
+                            Excluir
+                        </button>
+                    </form>
+
+                </div>
             </div>
 
             <hr>

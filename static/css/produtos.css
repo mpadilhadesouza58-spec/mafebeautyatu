@@ -621,3 +621,49 @@ body:has(.detalhe-produto) {
     background: var(--pink) !important;
     color: var(--chilli) !important;
 }
+/* AÇÕES DOS PRODUTOS */
+
+.acoes-produto {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acoes-produto a,
+.acoes-produto button.botao-excluir {
+    display: inline-block;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 10px 15px;
+
+    background: var(--chilli);
+    color: white;
+    border: 1px solid var(--chilli);
+    border-radius: 4px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.acoes-produto a:hover,
+.acoes-produto button.botao-excluir:hover {
+    background: var(--pink);
+    color: var(--chilli);
+    border-color: var(--pink);
+}
+
+.acoes-produto form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}

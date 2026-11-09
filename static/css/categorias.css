@@ -1,18 +1,22 @@
 
 /* CATEGORIAS - MAFE BEAUTY */
 
+/* PALETA DE CORES */
+
 :root {
     --vermelho: #B0000B;
     --rosa-claro: #FFD6DF;
     --rosa-forte: #FF9FBE;
     --creme: #FFF2C0;
     --branco: #FFFFFF;
+    --texto: #4A3030;
 }
 
 /* ÁREA PRINCIPAL */
 
 .secao-categorias {
     background-color: var(--rosa-claro);
+    border-top: 3px solid var(--vermelho);
     padding: 50px 25px;
     min-height: 70vh;
     text-align: center;
@@ -26,7 +30,7 @@
 }
 
 .introducao-categorias {
-    color: var(--vermelho);
+    color: var(--texto);
     font-size: 16px;
     margin-bottom: 35px;
 }
@@ -40,7 +44,7 @@
     padding: 30px;
     max-width: 550px;
     margin: 0 auto 45px;
-    box-shadow: 0 5px 15px rgba(176, 0, 11, 0.1);
+    box-shadow: 0 5px 15px rgba(176, 0, 11, 0.12);
 }
 
 .cadastro-categoria h3 {
@@ -139,7 +143,7 @@
 }
 
 .categoria p {
-    color: #4A3030;
+    color: var(--texto);
     font-size: 15px;
     line-height: 1.6;
 }
@@ -163,6 +167,7 @@
 /* ADAPTAÇÃO PARA CELULAR */
 
 @media (max-width: 600px) {
+
     .secao-categorias {
         padding: 30px 15px;
     }
@@ -178,4 +183,58 @@
     .categorias {
         grid-template-columns: 1fr;
     }
+
+}
+
+/* CABEÇALHO EXCLUSIVO DA PÁGINA DE CATEGORIAS */
+
+.cabecalho-categorias {
+    background: #FFD6DF;
+    text-align: center;
+    padding: 18px 20px;
+    margin: 0;
+    border: none;
+}
+
+.cabecalho-categorias h1 {
+    color: #B0000B;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0 0 4px;
+}
+
+.cabecalho-categorias p {
+    color: #B0000B;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* MENU SUPERIOR */
+
+.menu-categorias {
+    background-color: #FFA1C2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin: 0;
+    border: none;
+}
+
+.menu-categorias a {
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 22px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-categorias a:hover {
+    background-color: #B0000B;
+    color: #FFFFFF;
 }

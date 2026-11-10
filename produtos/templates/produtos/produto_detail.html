@@ -1,4 +1,5 @@
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -91,6 +92,18 @@
             letter-spacing: 2px;
         }
 
+        /* IMAGEM DO PRODUTO */
+        .imagem-produto-detalhe {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+            margin: 25px auto;
+            border-radius: 8px;
+        }
+
         .detalhe-produto h1 {
             margin: 20px 0;
             color: var(--chilli);
@@ -168,20 +181,15 @@
         }
 
         .botao:hover {
-            background: var(--pink);
-            border-color: var(--pink);
-            color: var(--chilli);
+            background: var(--ink);
+            border-color: var(--ink);
+            color: white;
             transform: translateY(-2px);
         }
 
         .botao-voltar {
             background: transparent;
             color: var(--chilli);
-        }
-
-        .botao-excluir {
-            background: var(--ink);
-            border-color: var(--ink);
         }
 
         /* RODAPÉ */
@@ -207,6 +215,11 @@
 
             .detalhe-produto {
                 padding: 23px;
+            }
+
+            .imagem-produto-detalhe {
+                height: 240px;
+                max-width: 100%;
             }
 
             .acoes {
@@ -237,6 +250,14 @@
                 DETALHES DO PRODUTO
             </span>
 
+            {% if produto.imagem %}
+                <img
+                    src="{{ produto.imagem.url }}"
+                    alt="{{ produto.nome }}"
+                    class="imagem-produto-detalhe"
+                >
+            {% endif %}
+
             <h1>{{ produto.nome }}</h1>
 
             <p class="descricao">
@@ -264,19 +285,9 @@
 
             <div class="acoes">
 
-                <a href="{% url 'produto_editar' produto.pk %}"
-                   class="botao">
-                    Editar produto
-                </a>
-
-                <a href="{% url 'produto_excluir' produto.pk %}"
-                   class="botao botao-excluir">
-                    Excluir produto
-                </a>
-
-                <a href="{% url 'produto_lista' %}"
+                <a href="{% url 'home' %}"
                    class="botao botao-voltar">
-                    Voltar para produtos
+                    Voltar ao início
                 </a>
 
             </div>

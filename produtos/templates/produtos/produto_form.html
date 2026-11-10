@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 {% load static %}
 <html lang="pt-br">
@@ -6,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 
-
-    <title>{% if object %} Editar Produto {% else %} Cadastrar Produto {% endif %}</title>
+    <title>{% if object %}Editar Produto{% else %}Cadastrar Produto{% endif %}</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <h1>Cadastrar Produto</h1>
         {% endif %}
 
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             {{ form.as_p }}

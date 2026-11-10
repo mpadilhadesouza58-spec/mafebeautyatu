@@ -659,11 +659,29 @@ body:has(.detalhe-produto) {
     border-color: var(--pink);
 }
 
-.acoes-produto form {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+/* =====================================
+   IMAGENS DOS CARDS DE PRODUTOS
+   ===================================== */
+
+body > div:not(.container) img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 15px;
+    border-radius: 5px;
 }
+
+/* Ajuste dos cards */
+body > div:not(.container) {
+    overflow: hidden;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body > div:not(.container) img {
+        height: 200px;
+    }
+}
+

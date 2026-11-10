@@ -1,3 +1,9 @@
+
+/* =====================================================
+   MAFE BEAUTY — PRODUTOS
+   Identidade visual oficial
+   ===================================================== */
+
 :root {
     --chilli: #AA0003;
     --pink: #FFA1C2;
@@ -6,239 +12,676 @@
     --cream: #FFF8F8;
     --ink: #35151D;
 }
+
+/* RESET */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
-/* menu */
-.navbar-mafe {
-    background: var(--ballet);
-    border-bottom: 3px solid var(--chilli);
-}
-
-.brand-mafe {
+a {
     color: var(--chilli);
-    font-size: 1.6rem;
-    font-weight: 900;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-}
-
-.brand-mafe:hover {
-    color: var(--chilli);
-}
-
-.navbar-mafe .nav-link {
-    color: var(--ink);
-    font-weight: bold;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-
-.navbar-mafe .nav-link:hover {
-    color: var(--chilli);
-}
-
-/* BOTÕES */
-.btn-mafe {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--chilli);
-    color: white;
-    border: 2px solid var(--chilli);
-    border-radius: 3px;
-    font-weight: bold;
-    text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: 0.2s;
+    transition: 0.25s ease;
 }
 
-.btn-mafe:hover {
-    background: var(--pink);
-    color: var(--chilli);
-    border-color: var(--chilli);
+a:hover {
+    color: var(--pink);
 }
 
-/* FAIXA LISTRADA */
-.stripe-banner {
-    padding: 13px;
-    text-align: center;
+/* =====================================================
+   LISTAGEM DE PRODUTOS
+   ===================================================== */
+
+body:not(:has(.container)) {
+    background: var(--ballet);
+    padding-top: 0;
+}
+
+/* Faixa decorativa */
+body:not(:has(.container))::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 22px;
     background: repeating-linear-gradient(
         90deg,
-        var(--chilli) 0,
+        var(--chilli) 0px,
         var(--chilli) 28px,
         var(--pink) 28px,
         var(--pink) 56px
     );
 }
 
-.stripe-banner span {
-    display: inline-block;
-    padding: 7px 18px;
-    background: var(--ballet);
-    color: var(--chilli);
-    font-size: 0.8rem;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-/* CARROSSEL */
-.hero-mafe {
-    position: relative;
-    background: var(--pink);
-}
-
-.hero-mafe .carousel-item img {
-    display: block;
-    width: 100%;
-    height: 470px;
-    object-fit: cover;
-}
-
-/* TEXTO SOBRE O CARROSSEL */
-.hero-caption {
-    position: absolute;
-    z-index: 2;
-    left: 7%;
-    bottom: 10%;
-    width: min(460px, 86%);
-    padding: 25px;
-    background: var(--ballet);
-    border: 3px solid var(--chilli);
-    color: var(--chilli);
-}
-
-.hero-caption h1 {
-    margin: 10px 0;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.3rem, 5vw, 4.5rem);
-    font-weight: 900;
-    line-height: 0.98;
-}
-
-.hero-caption p {
-    margin-bottom: 0;
-}
-
-/* TÍTULOS DAS SEÇÕES */
-.section-label {
-    color: var(--chilli);
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.section-title {
-    color: var(--chilli);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    font-weight: 900;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-}
-
-/* SEÇÃO DE PROMOÇÕES */
-.promo-section {
-    padding: 50px 0;
-    background: var(--ballet);
-    border-top: 3px solid var(--chilli);
-    border-bottom: 3px solid var(--chilli);
-}
-
-/* CARDS DE PRODUTOS */
-.promo-card {
-    height: 100%;
-    overflow: hidden;
-    background: white;
-    border: 2px solid var(--chilli);
-}
-
-.promo-card .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 22px;
-}
-
-.promo-card h3 {
-    color: var(--chilli);
-    font-size: 1.1rem;
-    font-weight: 900;
-}
-
-/* ETIQUETA DE DESTAQUE */
-.promo-tag {
-    display: inline-block;
-    padding: 5px 9px;
-    background: var(--lemon);
-    color: var(--chilli);
-    font-size: 0.7rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
-/* PREÇO */
-.promo-price {
-    color: var(--chilli);
-    font-size: 1.2rem;
-    font-weight: 900;
-}
-
-/* BOTÃO NO FINAL DO CARD */
-.promo-card .btn-mafe {
-    margin-top: auto;
-}
-
-/* CHAMADA FINAL */
-.mafe-note {
-    padding: 40px 20px;
-    background: var(--lemon);
-    border: 2px solid var(--chilli);
+/* Título */
+body > h1 {
+    margin: 45px 20px 30px;
     text-align: center;
-}
-
-.mafe-note h2 {
     color: var(--chilli);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-size: clamp(30px, 4vw, 40px);
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
-/* RODAPÉ */
-.footer-mafe {
-    padding: 30px 15px;
+/* =====================================================
+   BOTÕES DE CADASTRO
+   ===================================================== */
+
+.botoes-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px auto;
+}
+
+.botoes-cadastro .botao-cadastro,
+body > a {
+    display: inline-block;
+    padding: 13px 24px;
     background: var(--chilli);
     color: white;
+    border: 2px solid var(--chilli);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
     text-align: center;
+    transition: 0.25s ease;
 }
 
-.brand-footer {
-    font-size: 1.5rem;
+.botoes-cadastro .botao-cadastro:hover,
+body > a:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: var(--chilli);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   BUSCA DE PRODUTOS
+   ===================================================== */
+
+body > form:not(:has(textarea)) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: min(650px, 92%);
+    margin: 30px auto;
+    padding: 16px;
+    background: var(--cream);
+    border: 1px solid var(--pink);
+    border-radius: 6px;
+}
+
+body > form input[type="text"] {
+    flex: 1;
+    width: 320px;
+    max-width: 100%;
+    min-height: 46px;
+    padding: 12px 16px;
+    background: white;
+    color: var(--ink);
+    border: 1px solid var(--ballet);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+body > form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--chilli);
+    box-shadow: 0 0 0 3px rgba(170, 0, 3, 0.10);
+}
+
+body > form button {
+    min-height: 46px;
+    padding: 12px 24px;
+    background: var(--chilli);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+body > form button:hover {
+    background: var(--pink);
+    color: var(--chilli);
+}
+
+/* Separadores */
+body > hr {
+    width: 90%;
+    margin: 35px auto;
+    border: none;
+    border-top: 1px solid rgba(170, 0, 3, 0.20);
+}
+
+/* =====================================================
+   CARDS DOS PRODUTOS
+   ===================================================== */
+
+body > div:not(.container) {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+    min-height: 270px;
+    margin: 15px 2.8%;
+    padding: 25px;
+
+    background: var(--cream);
+    border: 1px solid var(--ballet);
+    border-radius: 5px;
+
+    box-shadow: 5px 5px 0 rgba(170, 0, 3, 0.08);
+
+    transition: 0.3s ease;
+}
+
+body > div:not(.container):hover {
+    transform: translateY(-5px);
+    border-color: var(--chilli);
+    box-shadow: 7px 8px 0 rgba(170, 0, 3, 0.12);
+}
+
+/* Nome do produto */
+body > div h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    color: var(--chilli);
+    border-bottom: 2px solid var(--ballet);
+    font-size: 21px;
     font-weight: 900;
     text-transform: uppercase;
 }
 
-/* RESPONSIVIDADE PARA CELULARES */
-@media (max-width: 767px) {
-    .hero-mafe .carousel-item img {
-        height: 360px;
-    }
+/* Informações */
+body > div p {
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
 
-    .hero-caption {
-        left: 5%;
-        bottom: 7%;
-        padding: 16px;
-    }
+body > div p strong {
+    color: var(--chilli);
+}
 
-    .hero-caption h1 {
-        font-size: 2.4rem;
-    }
+/* Links dos cards */
+body > div a {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+    color: var(--chilli);
+    font-size: 13px;
+    font-weight: 600;
+}
 
-    .stripe-banner span {
-        font-size: 0.65rem;
-        letter-spacing: 1px;
+body > div a:first-of-type {
+    padding: 10px 15px;
+    background: var(--chilli);
+    color: white;
+    border: 1px solid var(--chilli);
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body > div a:first-of-type:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: var(--chilli);
+}
+
+body > div a:not(:first-of-type):hover {
+    color: var(--pink);
+}
+
+/* Mensagem sem produtos */
+body > p {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 30px 20px;
+    background: var(--cream);
+    border: 1px solid var(--pink);
+    border-left: 5px solid var(--chilli);
+    border-radius: 5px;
+    color: var(--ink);
+    text-align: center;
+}
+
+/* =====================================================
+   FORMULÁRIOS DE CADASTRO, EDIÇÃO E PROMOÇÃO
+   ===================================================== */
+
+body:has(.container) {
+    min-height: 100vh;
+    padding: 28px 2%;
+    background: var(--ballet);
+}
+
+body:has(.container) .container {
+    display: block;
+    width: 85% !important;
+    max-width: 900px !important;
+    min-height: auto !important;
+    margin: 35px auto !important;
+    padding: 35px !important;
+
+    background: var(--cream);
+    border: 1px solid var(--pink);
+    border-top: 6px solid var(--chilli);
+    border-radius: 5px;
+
+    box-shadow: 6px 6px 0 rgba(170, 0, 3, 0.08);
+}
+
+/* Título do formulário */
+body:has(.container) .container h1 {
+    width: 100%;
+    margin: 10px 0 25px;
+    color: var(--chilli);
+    text-align: center;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* Formulário */
+body:has(.container) .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 28px;
+
+    background: white;
+    border: 1px solid var(--ballet);
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+/* Campos */
+body:has(.container) .container form p {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px;
+}
+
+/* Labels */
+body:has(.container) .container form label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Inputs, selects e textareas */
+body:has(.container) .container form input:not([type="hidden"]):not([type="submit"]),
+body:has(.container) .container form select,
+body:has(.container) .container form textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 12px 14px;
+
+    background: var(--cream);
+    color: var(--ink);
+    border: 1px solid var(--ballet);
+    border-radius: 4px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+body:has(.container) .container form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+body:has(.container) .container form select {
+    cursor: pointer;
+}
+
+/* Foco */
+body:has(.container) .container form input:focus,
+body:has(.container) .container form select:focus,
+body:has(.container) .container form textarea:focus {
+    outline: none;
+    border-color: var(--chilli);
+    box-shadow: 0 0 0 3px rgba(170, 0, 3, 0.10);
+}
+
+/* Botões salvar e cadastrar */
+body:has(.container) .container form button,
+body:has(.container) .container form input[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    margin-top: 12px;
+    padding: 13px 18px;
+
+    background: var(--chilli);
+    color: white;
+    border: 1px solid var(--chilli);
+    border-radius: 4px;
+
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+body:has(.container) .container form button:hover,
+body:has(.container) .container form input[type="submit"]:hover {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: var(--chilli);
+}
+
+/* Cancelar */
+body:has(.container) .container form a {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 12px auto 0;
+    padding: 12px 24px;
+
+    background: var(--ballet);
+    color: var(--chilli);
+    border: 1px solid var(--pink);
+    border-radius: 4px;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+body:has(.container) .container form a:hover {
+    background: var(--pink);
+    color: var(--chilli);
+}
+
+/* =====================================================
+   ACESSIBILIDADE
+   ===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--chilli);
+    outline-offset: 3px;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    body > div:not(.container) {
+        width: 42%;
+        margin: 15px 3.5%;
     }
 }
+
+@media (max-width: 600px) {
+
+    body > h1 {
+        margin-top: 30px;
+        font-size: 29px;
+    }
+
+    body > div:not(.container) {
+        display: block;
+        width: auto;
+        min-height: auto;
+        margin: 18px 16px;
+        padding: 22px;
+    }
+
+    body > form:not(:has(textarea)) {
+        width: calc(100% - 32px);
+        align-items: stretch;
+        padding: 14px;
+    }
+
+    body > form input[type="text"],
+    body > form button {
+        width: 100%;
+    }
+
+    .botoes-cadastro {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .botoes-cadastro .botao-cadastro {
+        width: 100%;
+    }
+
+    body:has(.container) {
+        padding: 14px 10px;
+    }
+
+    body:has(.container) .container {
+        width: 100% !important;
+        margin: 12px auto !important;
+        padding: 18px !important;
+    }
+
+    body:has(.container) .container form {
+        padding: 18px 14px;
+    }
+
+    body:has(.container) .container form textarea {
+        min-height: 120px;
+    }
+}
+
+/* CENTRALIZAR BOTÕES DE CADASTRO */
+
+body:not(:has(.container)) {
+    text-align: center;
+}
+
+.botoes-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px auto;
+    gap: 15px;
+}
+
+.botoes-cadastro .botao-cadastro {
+    display: inline-block;
+    margin: 0;
+}
+
+/* Centralizar também caso os links estejam direto no body */
+body:not(:has(.container)) > a {
+    display: inline-block;
+    margin: 0 6px 25px;
+}
+
+/* Manter o conteúdo dos cards alinhado à esquerda */
+body:not(:has(.container)) > div:not(.container) {
+    text-align: left;
+}
+
+/* =========================================
+   DETALHES DO PRODUTO
+   ========================================= */
+
+body:has(.detalhe-produto) {
+    min-height: 100vh;
+    background: var(--ballet);
+    padding: 55px 20px;
+}
+
+.detalhe-produto {
+    width: 90%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px;
+
+    background: var(--cream);
+    border: 2px solid var(--chilli);
+    border-radius: 5px;
+
+    box-shadow: 7px 7px 0 rgba(170, 0, 3, 0.12);
+}
+
+.detalhe-produto h1 {
+    color: var(--chilli);
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.detalhe-produto p {
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.8;
+    border-bottom: 1px solid var(--ballet);
+    padding-bottom: 10px;
+}
+
+.detalhe-produto strong {
+    color: var(--chilli);
+}
+
+.detalhe-produto a {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+    padding: 11px 18px;
+    background: var(--chilli);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.detalhe-produto a:hover {
+    background: var(--pink);
+    color: var(--chilli);
+}
+
+.detalhe-produto hr {
+    border: none;
+    border-top: 2px solid var(--ballet);
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    .detalhe-produto {
+        width: 100%;
+        padding: 22px;
+    }
+}
+
+/* BOTÃO VOLTAR AO INÍCIO */
+
+.botao-inicio {
+    background: var(--chilli) !important;
+    color: var(--cream) !important;
+    border: 2px solid var(--chilli) !important;
+}
+
+.botao-inicio:hover {
+    background: var(--pink) !important;
+    color: var(--chilli) !important;
+}
+/* AÇÕES DOS PRODUTOS */
+
+.acoes-produto {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acoes-produto a,
+.acoes-produto button.botao-excluir {
+    display: inline-block;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 10px 15px;
+
+    background: var(--chilli);
+    color: white;
+    border: 1px solid var(--chilli);
+    border-radius: 4px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.acoes-produto a:hover,
+.acoes-produto button.botao-excluir:hover {
+    background: var(--pink);
+    color: var(--chilli);
+    border-color: var(--pink);
+}
+
+/* =====================================
+   IMAGENS DOS CARDS DE PRODUTOS
+   ===================================== */
+
+body > div:not(.container) img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+}
+
+/* Ajuste dos cards */
+body > div:not(.container) {
+    overflow: hidden;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body > div:not(.container) img {
+        height: 200px;
+    }
+}
+

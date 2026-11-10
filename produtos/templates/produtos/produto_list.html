@@ -1,6 +1,5 @@
-
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -43,6 +42,15 @@
         {% for produto in produtos %}
 
             <div>
+
+                {% if produto.imagem %}
+                    <img
+                        src="{{ produto.imagem.url }}"
+                        alt="{{ produto.nome }}"
+                        class="imagem-produto"
+                    >
+                {% endif %}
+
                 <h2>{{ produto.nome }}</h2>
 
                 <p>{{ produto.descricao }}</p>
@@ -85,7 +93,7 @@
                             style="
                                 display: inline-block;
                                 background-color: #AA0003;
-                                color: white;
+                                color: #e4dddd;
                                 border: 1px solid #AA0003;
                                 border-radius: 4px;
                                 padding: 10px 15px;

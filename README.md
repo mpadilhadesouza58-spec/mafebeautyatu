@@ -37,7 +37,7 @@ As principais tecnologias utilizadas no desenvolvimento do projeto são:
 | Integrante               | Responsabilidade                                                                   |
 |--------------------------|------------------------------------------------------------------------            |
 | **Maria Eduara Padilha** | Liderança do projeto, CSS de produtos, README e desenvolvimento do app `produtos`  |
-| **Felipe**               | Integração do Django, Home, URLs principais e integração dos templates             |
+| **Felipe**               | Integração do Django, Home, Dashboard, URLs principais e integração dos templates             |
 | **Maria Clara**          | Desenvolvimento da página de categoria e contato                                               |
 | **Mayara**               | Desenvolvimento da página de login e cadastro                             |
 
@@ -55,9 +55,9 @@ Responsável pela liderança do projeto e pelo sistema de produtos.
 * URLs do produto;
 * Admin do produto.
 
-### Felipe — Integração Django + Home
+### Felipe — Integração Django + Home + Dashboard
 
-Responsável pela integração do projeto com o Django e pelo funcionamento da página inicial.
+Responsável pela integração do projeto com o Django, pelo funcionamento da página inicial e pelo desenvolvimento do painel administrativo.
 
 * `config/urls.py`;
 * View da Home;
@@ -65,7 +65,11 @@ Responsável pela integração do projeto com o Django e pelo funcionamento da p
 * Ligação dos templates com o Django;
 * Página `index`;
 * Integração da Home com os produtos cadastrados;
-* Testes das rotas.
+* Testes das rotas e funcionalidades.
+* view do dashboard.
+* template do dashboard.
+* Configuração da URL do Dashboard.
+  
 
 ### Maria Clara — Contato e Categoria
 
@@ -155,6 +159,14 @@ A Home será responsável pela página inicial do sistema e pela integração en
 
 Também será realizada a integração da Home com os produtos cadastrados no sistema.
 
+### Dashboard
+
+**Responsável:** Felipe
+
+O Dashboard será responsável pelo painel administrativo do sistema, centralizando o acesso às funcionalidades de gerenciamento da loja.
+
+Sua finalidade é facilitar a administração e a organização das informações do sistema.
+
 ### Contato
 
 **Responsável:** Maria Clara
@@ -192,16 +204,19 @@ Será realizada a revisão dos templates existentes, verificando:
 | `static/css/`        | Desenvolvimento e manutenção do CSS              |
 | `README.md`          | Documentação e atualização do projeto            |
 
-### Felipe — Integração Django + Home
+### Felipe — Integração Django + Home + Dashboard
 
-| Arquivo/Área            | Responsabilidade                          |
-| ----------------------- | ----------------------------------------- |
-| `config/urls.py`        | Integração das URLs do projeto            |
-| View da Home            | Desenvolvimento da View da página inicial |
-| `index.html`            | Integração da página inicial com o Django |
-| Templates               | Ligação dos templates com o Django        |
+| Arquivo/Área | Responsabilidade |
+|---|---|
+| `config/urls.py` | Integração das URLs do projeto |
+| View da Home | Desenvolvimento da View da página inicial |
+| `index.html` | Integração da página inicial com o Django |
+| Templates | Ligação dos templates com o Django |
 | Integração com produtos | Exibição dos produtos cadastrados na Home |
-| Rotas                   | Testar e corrigir as rotas do projeto     |
+| View do Dashboard | Desenvolvimento da View do painel administrativo |
+| Template do Dashboard | Desenvolvimento da interface do painel |
+| URL do Dashboard | Configuração da rota do painel administrativo |
+| Rotas | Testar e corrigir as rotas do projeto |
 
 ### Maria Clara — Contato
 
@@ -248,7 +263,7 @@ Será realizada a revisão dos templates existentes, verificando:
 
 A divisão das tarefas foi realizada para que cada integrante tenha uma área específica do projeto, facilitando o desenvolvimento e a integração das funcionalidades.
 
-A **Maria Eduarda Padilha** ficará responsável pelo sistema de produtos e pela liderança do projeto. O **Felipe** ficará responsável pela integração do Django e pela Home. A **Maria Clara** ficará responsável pela página de contato. A **Mayara** ficará responsável pela revisão dos templates, navegação restrita de cada usuario atravez da tela de login e criação de 'usuarios'.
+A **Maria Eduarda Padilha** ficará responsável pelo sistema de produtos e pela liderança do projeto. O **Felipe** ficará responsável pela integração do Django pela Home,pelo Dashboard e pelas URLs principais. A **Maria Clara** ficará responsável pela página de contato. A **Mayara** ficará responsável pela revisão dos templates, navegação restrita de cada usuario atravez da tela de login e criação de 'usuarios'.
 
 Dessa forma, as partes desenvolvidas individualmente poderão ser integradas em um único sistema web funcional.
 

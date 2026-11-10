@@ -67,13 +67,15 @@ Responsável pela integração do projeto com o Django e pelo funcionamento da p
 * Integração da Home com os produtos cadastrados;
 * Testes das rotas.
 
-### Maria Clara — Contato
+### Maria Clara — Contato e Categoria
 
-Responsável pelo desenvolvimento da página de contato da loja.
+Responsável pelo desenvolvimento da página de contato e categoria da loja.
 
 * Página de contato e categorias;
 * View de contato e categoria;
 * URL de contato e categoria;
+* models de contato e categoria
+* apps de contato e categoria
 * Template de contato e categorias;
 * css de contato e categorias
 * Testes da página.
@@ -203,14 +205,30 @@ Será realizada a revisão dos templates existentes, verificando:
 
 ### Maria Clara — Contato
 
-| Arquivo/Área        | Responsabilidade                                  |
-| ------------------- | ------------------------------------------------- |
-| `contato.html`      | Desenvolvimento da página de contato              |
-| View de contato     | Criar a View caso seja necessária                 |
-| URL de contato      | Criar a rota da página                            |
-| `contato.css`       | Ajustes visuais da página                         |
-| Informações da loja | Inserção e organização das informações de contato |
-| Testes              | Testar o funcionamento da página                  |
+| Arquivo/Área        | Responsabilidade                                                      |
+| ------------------- | ----------------------------------------------------------------------|
+| `contato.html`      | Desenvolvimento da página de contato                                  |
+| View de contato     | Criar a View caso seja necessária                                     |
+| URL de contato      | Configuração da rota da página de contato                             |
+| models de contato   | Criação do model para armazenar as mensagens enviadas pelo formulário |
+| apps de contato     | Criação e configuração do aplicativo de contato                       |                                                                       |
+| `contato.css`       | Ajustes visuais da página                                             |
+| Informações da loja | Inserção e organização das informações de contato                     |
+| Testes              | Testar o funcionamento da página                                      |
+
+### Maria Clara — Categoria
+
+| Arquivo/Área          | Responsabilidade                                                  |
+| -------------------   | ------------------------------------------------------------------|
+| `categoria.html`      | Desenvolvimento da página de categoria                            |
+| View de categoria     | Criar a View caso seja necessária                                 |
+| URL de categoria      | Configuração da rota da página de categoria                       |
+| models de categoria   |  Criação do model para armazenar as categorias no banco de dados  |
+| apps de categoria     |  Criação e configuração do aplicativo de categorias               |
+| `categoria.css`       | Ajustes visuais da página                                         |
+| Informações da loja   | Inserção e organização das informações de categoria               |
+| Testes                | Testar o funcionamento da página                                  |
+
 
 ### Mayara — Templates e Acabamento e criação do app usuarios
 

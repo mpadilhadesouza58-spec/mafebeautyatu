@@ -1,9 +1,5 @@
 
-/* =====================================================
-   MAFE BEAUTY — PRODUTOS
-   Identidade visual oficial
-   ===================================================== */
-
+/* MAFE BEAUTY — PRODUTOS Identidade visual oficial*/
 :root {
     --chilli: #AA0003;
     --pink: #FFA1C2;
@@ -33,7 +29,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
-
 a {
     color: var(--chilli);
     text-decoration: none;
@@ -44,15 +39,11 @@ a:hover {
     color: var(--pink);
 }
 
-/* =====================================================
-   LISTAGEM DE PRODUTOS
-   ===================================================== */
-
+/* LISTAGEM DE PRODUTOS*/
 body:not(:has(.container)) {
     background: var(--ballet);
     padding-top: 0;
 }
-
 /* Faixa decorativa */
 body:not(:has(.container))::before {
     content: "";
@@ -67,7 +58,6 @@ body:not(:has(.container))::before {
         var(--pink) 56px
     );
 }
-
 /* Título */
 body > h1 {
     margin: 45px 20px 30px;
@@ -79,9 +69,7 @@ body > h1 {
     letter-spacing: -1px;
 }
 
-/* =====================================================
-   BOTÕES DE CADASTRO
-   ===================================================== */
+/* BOTÕES DE CADASTRO*/
 
 .botoes-cadastro {
     display: flex;
@@ -114,9 +102,7 @@ body > a:hover {
     transform: translateY(-2px);
 }
 
-/* =====================================================
-   BUSCA DE PRODUTOS
-   ===================================================== */
+/*BUSCA DE PRODUTOS */
 
 body > form:not(:has(textarea)) {
     display: flex;
@@ -176,9 +162,7 @@ body > hr {
     border-top: 1px solid rgba(170, 0, 3, 0.20);
 }
 
-/* =====================================================
-   CARDS DOS PRODUTOS
-   ===================================================== */
+/*CARDS DOS PRODUTOS*/
 
 body > div:not(.container) {
     display: inline-block;
@@ -269,9 +253,7 @@ body > p {
     text-align: center;
 }
 
-/* =====================================================
-   FORMULÁRIOS DE CADASTRO, EDIÇÃO E PROMOÇÃO
-   ===================================================== */
+/*FORMULÁRIOS DE CADASTRO, EDIÇÃO E PROMOÇÃO*/
 
 body:has(.container) {
     min-height: 100vh;
@@ -429,9 +411,7 @@ body:has(.container) .container form a:hover {
     color: var(--chilli);
 }
 
-/* =====================================================
-   ACESSIBILIDADE
-   ===================================================== */
+/*ACESSIBILIDADE*/
 
 a:focus-visible,
 button:focus-visible,
@@ -442,9 +422,7 @@ textarea:focus-visible {
     outline-offset: 3px;
 }
 
-/* =====================================================
-   RESPONSIVIDADE
-   ===================================================== */
+/*RESPONSIVIDADE */
 
 @media (max-width: 900px) {
     body > div:not(.container) {

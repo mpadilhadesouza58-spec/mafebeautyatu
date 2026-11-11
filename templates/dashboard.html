@@ -1,70 +1,349 @@
 
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | Mafe Beauty</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           rel="stylesheet">
+
+    <style>
+        :root {
+            --rosa: #FFA1C2;
+            --ballet: #FFD6DE;
+            --chilli: #AA0003;
+            --hover: #D41445;
+            --fundo: #FFF8F8;
+            --texto: #35151D;
+            --lemon: #FFF3B2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: Arial, sans-serif;
+        }
+
+        /* CABEÇALHO */
+        .navbar {
+            background: var(--ballet);
+            border-bottom: 1px solid var(--chilli);
+            padding: 14px 30px;
+        }
+
+        .navbar-brand {
+            color: var(--chilli) !important;
+            font-weight: 900;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .navbar span {
+            color: var(--chilli);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* LISTRAS */
+        .faixa-listrada {
+            height: 48px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--chilli) 0px,
+                var(--chilli) 28px,
+                var(--rosa) 28px,
+                var(--rosa) 56px
+            );
+        }
+
+        /* MENU LATERAL */
+        aside {
+            background: #FFFFFF;
+            border-right: 1px solid var(--ballet);
+            padding: 30px 20px !important;
+        }
+
+        .menu-titulo {
+            color: var(--chilli);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            color: var(--texto);
+            font-size: 13px;
+            padding: 11px 12px;
+            border-bottom: 1px solid #f8e5eb;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--chilli);
+            background: var(--ballet);
+        }
+
+        /* CONTEÚDO */
+        main {
+            padding: 40px !important;
+        }
+
+        .identificacao {
+            color: var(--chilli);
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .titulo {
+            color: var(--chilli);
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .descricao {
+            color: #76565b;
+            font-size: 13px;
+        }
+
+        .linha {
+            border-color: var(--chilli);
+            opacity: 0.3;
+            margin: 28px 0;
+        }
+
+        /* DESTAQUE */
+        .boas-vindas {
+            background: var(--ballet);
+            border-left: 5px solid var(--chilli);
+            padding: 22px 25px;
+            margin: 25px 0;
+        }
+
+        .boas-vindas h2 {
+            color: var(--chilli);
+            font-family: Georgia, serif;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .boas-vindas p {
+            color: var(--texto);
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        /* CARD */
+        .card-mafe {
+            background: #FFFFFF;
+            border: 1px solid var(--ballet);
+            border-radius: 4px;
+            padding: 23px;
+            max-width: 400px;
+        }
+
+        .card-mafe p {
+            color: var(--chilli);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .numero {
+            color: var(--chilli);
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* GERENCIAMENTO */
+        .gerenciamento {
+            background: #FFFFFF;
+            border: 1px solid var(--ballet);
+            padding: 25px;
+            max-width: 650px;
+        }
+
+        .gerenciamento h2 {
+            color: var(--chilli);
+            font-family: Georgia, serif;
+            font-size: 23px;
+        }
+
+        .gerenciamento p {
+            color: #76565b;
+            font-size: 13px;
+        }
+
+        /* BOTÃO */
+        .btn-mafe {
+            display: inline-block;
+            background: var(--chilli);
+            color: white;
+            border: 2px solid var(--chilli);
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-mafe:hover {
+            background: var(--rosa);
+            color: var(--chilli);
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: var(--ballet);
+            border-top: 1px solid var(--chilli);
+            color: var(--chilli);
+            text-align: center;
+            padding: 14px;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 767px) {
+            aside {
+                min-height: auto !important;
+            }
+
+            main {
+                padding: 25px !important;
+            }
+
+            .titulo {
+                font-size: 28px;
+            }
+
+            .navbar span {
+                font-size: 9px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-light">
 
-<nav class="navbar navbar-dark" style="background-color: #aa0003;">
-    <div class="container-fluid px-4">
-        <a href="/" class="navbar-brand fw-bold">Mafe Beauty</a>
-        <span class="text-white">Painel administrativo</span>
-    </div>
-</nav>
+<body>
 
-<div class="container-fluid">
-    <div class="row">
+    <!-- CABEÇALHO -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand">MAFE BEAUTY</a>
+            <span>Painel administrativo</span>
+        </div>
+    </nav>
 
-        <aside class="col-md-3 col-lg-2 bg-white min-vh-100 border-end p-3">
-            <h6 class="text-secondary mb-3">GERENCIAMENTO</h6>
+    <!-- FAIXA DECORATIVA -->
+    <div class="faixa-listrada"></div>
 
-            <a href="#inicio" class="nav-link py-2">Visão geral</a>
-            <a href="/produtos/" class="nav-link py-2">Produtos</a>
-            <a href="/admin/" class="nav-link py-2">Administração Django</a>
+    <div class="container-fluid">
+        <div class="row">
 
-            <hr>
+            <!-- MENU LATERAL -->
+            <aside class="col-md-3 col-lg-2 min-vh-100">
 
-            <a href="/" class="nav-link py-2">Voltar para a Home</a>
-        </aside>
+                <h6 class="menu-titulo">GERENCIAMENTO</h6>
 
-        <main class="col-md-9 col-lg-10 p-4" id="inicio">
-            <h1 class="h3 mb-2">Dashboard</h1>
-            <p class="text-secondary mb-4">
-                Gerencie os dados e os produtos da Mafe Beauty.
-            </p>
+                <a href="#inicio" class="nav-link">
+                    Visão geral
+                </a>
 
-            <div class="row g-3 mb-4">
-                <div class="col-sm-6 col-xl-4">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <p class="text-secondary mb-1">Produtos cadastrados</p>
-                            <h2 class="h3">{{ total_produtos }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <a href="/produtos/" class="nav-link">
+                    Produtos
+                </a>
 
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <h2 class="h5">Gerenciar produtos</h2>
-                    <p class="text-secondary">
-                        Acesse o cadastro para consultar e administrar as maquiagens.
+                <hr class="linha">
+
+                <a href="/" class="nav-link">
+                    Voltar para a Home
+                </a>
+
+            </aside>
+
+            <!-- CONTEÚDO PRINCIPAL -->
+            <main class="col-md-9 col-lg-10" id="inicio">
+
+                <p class="identificacao">
+                    MAFE BEAUTY / ADMINISTRAÇÃO
+                </p>
+
+                <h1 class="titulo">
+                    Dashboard
+                </h1>
+
+                <p class="descricao">
+                    Gerencie os dados e os produtos da Mafe Beauty.
+                </p>
+
+                <div class="boas-vindas">
+                    <h2>Bem-vindo ao painel administrativo!</h2>
+                    <p>
+                        Aqui você pode acompanhar e administrar
+                        os produtos da sua loja.
                     </p>
-                    <a href="/produtos/" class="btn text-white"
-                       style="background-color: #fff3b2;">
-                        Acessar produtos
-                    </a>
                 </div>
-            </div>
-        </main>
 
+                <hr class="linha">
+
+                <!-- INFORMAÇÕES -->
+                <p class="identificacao">VISÃO GERAL</p>
+
+                <div class="card-mafe">
+                    <p>PRODUTOS CADASTRADOS</p>
+
+                    <h2 class="numero">
+                        {{ total_produtos }}
+                    </h2>
+                </div>
+
+                <hr class="linha">
+
+                <!-- GERENCIAMENTO -->
+                <p class="identificacao">
+                    GERENCIAMENTO DA LOJA
+                </p>
+
+                <div class="gerenciamento">
+
+                    <h2>Produtos</h2>
+
+                    <p>
+                        Consulte, cadastre e administre
+                        as maquiagens disponíveis na loja.
+                    </p>
+
+                    <a href="/produtos/" class="btn-mafe">
+                        ACESSAR PRODUTOS →
+                    </a>
+
+                </div>
+
+            </main>
+        </div>
     </div>
-</div>
+
+    <footer>
+        MAFE BEAUTY
+    </footer>
 
 </body>
 </html>
